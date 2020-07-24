@@ -37,6 +37,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    // Doc: https://github.com/ssense/vue-carousel#readme
+    { src: './plugins/vue-carousel.js', mode: 'client' }
   ],
   /*
   ** Auto import components
