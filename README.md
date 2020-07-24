@@ -1,5 +1,7 @@
 # property-syariah
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fd969248-a923-4818-a304-cd3f57856b01/deploy-status)](https://app.netlify.com/sites/property-syariah/deploys)
+
 ## Build Setup
 
 ```bash
