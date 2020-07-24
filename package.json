@@ -10,7 +10,8 @@
     "serve": "nuxt serve"
   },
   "dependencies": {
-    "nuxt": "^2.13.0"
+    "nuxt": "^2.13.0",
+    "nuxt-fontawesome": "^0.4.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^2.0.0"
