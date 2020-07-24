@@ -24,7 +24,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Bitter' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Merriweather' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Merriweather+Sans' }
     ]
   },
   /*
