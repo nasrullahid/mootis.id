@@ -22,7 +22,9 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Bitter' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Merriweather' }
     ]
   },
   /*
@@ -52,6 +54,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    // Doc: https://github.com/vaso2/nuxt-fontawesome#readme
     [
       'nuxt-fontawesome', {
         imports: [
@@ -65,7 +68,13 @@ export default {
           }
         ]
       }
-    ]
+    ],
+    // Doc: https://github.com/WilliamDASILVA/nuxt-facebook-pixel-module#readme
+    ['nuxt-facebook-pixel-module', {
+      track: 'PageView',
+      pixelId: process.env.PIXEL_FB,
+      disabled: false
+    }]
   ],
   /*
   ** Build configuration

@@ -1,7 +1,17 @@
 {
   "name": "property-syariah",
+  "description": "Website property syariah made with nuxtjs",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://github.com/nazcules/property-syariah#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nazcules/property-syariah.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nazcules/property-syariah/issues"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -11,6 +21,7 @@
   },
   "dependencies": {
     "nuxt": "^2.13.0",
+    "nuxt-facebook-pixel-module": "^1.3.0",
     "nuxt-fontawesome": "^0.4.0"
   },
   "devDependencies": {
