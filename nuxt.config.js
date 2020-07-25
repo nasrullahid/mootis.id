@@ -1,87 +1,133 @@
-
 export default {
   /*
-  ** Nuxt rendering mode
-  ** See https://nuxtjs.org/api/configuration-mode
-  */
+   ** Nuxt rendering mode
+   ** See https://nuxtjs.org/api/configuration-mode
+   */
   mode: 'universal',
   /*
-  ** Nuxt target
-  ** See https://nuxtjs.org/api/configuration-target
-  */
+   ** Nuxt target
+   ** See https://nuxtjs.org/api/configuration-target
+   */
   target: 'server',
   /*
-  ** Headers of the page
-  ** See https://nuxtjs.org/api/configuration-head
-  */
+   ** Headers of the page
+   ** See https://nuxtjs.org/api/configuration-head
+   */
   head: {
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: process.env.npm_package_description || '',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Bitter' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Merriweather+Sans' }
-    ]
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Bitter',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Merriweather+Sans',
+      },
+    ],
   },
   /*
-  ** Global CSS
-  */
-  css: [
-  ],
+   ** Customize the progress-bar color
+   */
+  loading: { color: '#fff' },
   /*
-  ** Plugins to load before mounting the App
-  ** https://nuxtjs.org/guide/plugins
-  */
+   ** Global CSS
+   */
+  css: ['swiper/swiper-bundle.css'],
+  /*
+   ** Plugins to load before mounting the App
+   ** https://nuxtjs.org/guide/plugins
+   */
   plugins: [
-    // Doc: https://github.com/ssense/vue-carousel#readme
-    { src: './plugins/vue-carousel.js', mode: 'client' }
+    // Doc: https://github.com/surmon-china/vue-awesome-swiper#readme
+    { src: '@/plugins/vue-awesome-swiper', ssr: false },
   ],
   /*
-  ** Auto import components
-  ** See https://nuxtjs.org/api/configuration-components
-  */
+   ** Auto import components
+   ** See https://nuxtjs.org/api/configuration-components
+   */
   components: true,
   /*
-  ** Nuxt.js dev-modules
-  */
+   ** Nuxt.js dev-modules
+   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/eslint-module',
   ],
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
+    '@nuxtjs/pwa',
     // Doc: https://github.com/vaso2/nuxt-fontawesome#readme
     [
-      'nuxt-fontawesome', {
+      'nuxt-fontawesome',
+      {
         imports: [
           {
             set: '@fortawesome/free-solid-svg-icons',
-            icons: ['fas']
+            icons: ['fas'],
           },
           {
             set: '@fortawesome/free-brands-svg-icons',
-            icons: ['fab']
-          }
-        ]
-      }
+            icons: ['fab'],
+          },
+        ],
+      },
     ],
     // Doc: https://github.com/WilliamDASILVA/nuxt-facebook-pixel-module#readme
-    ['nuxt-facebook-pixel-module', {
-      track: 'PageView',
-      pixelId: process.env.PIXEL_FB,
-      disabled: false
-    }]
+    [
+      'nuxt-facebook-pixel-module',
+      {
+        track: 'PageView',
+        pixelId: process.env.PIXEL_FB,
+        disabled: false,
+      },
+    ],
   ],
   /*
-  ** Build configuration
-  ** See https://nuxtjs.org/api/configuration-build/
-  */
+   ** Build configuration
+   ** See https://nuxtjs.org/api/configuration-build/
+   */
   build: {
-  }
+    analyze: true,
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+          options: {
+            fix: true,
+          },
+        })
+      }
+    },
+    babel: {
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            useBuiltIns: 'entry',
+            corejs: 3,
+          },
+        ],
+      ],
+      plugins: ['@babel/transform-runtime'],
+    },
+  },
 }
