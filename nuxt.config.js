@@ -1,57 +1,62 @@
+import { isDev } from './utils'
+import {
+  head,
+  modules,
+  feed,
+  sitemap,
+  pwa,
+  build,
+  hooks
+} from './config'
 export default {
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
   mode: 'universal',
+
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
   target: 'server',
+
+  /**
+   * Modern mode on production
+   */
+  modern: !isDev,
+
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
    */
-  head: {
-    title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || '',
-      },
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Bitter',
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Merriweather+Sans',
-      },
-    ],
-  },
+  head,
+
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: {
+    color: 'var(--text-normal)',
+    failedColor: '#EF5753'
+  },
+
   /*
    ** Global CSS
    */
-  css: ['swiper/swiper-bundle.css'],
+  css: ['@/assets/css/animated.css', 'swiper/swiper-bundle.css'],
+
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
     // Doc: https://github.com/surmon-china/vue-awesome-swiper#readme
-    { src: '@/plugins/vue-awesome-swiper', ssr: false },
+    { src: '@/plugins/components.ssr', ssr: false },
+    '@/plugins/vue-lazyload',
+    '@/plugins/components.client',
+    '@/plugins/components'
   ],
+
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -60,74 +65,58 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
+
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    // Doc: https://github.com/nuxt-community/stylelint-module
+    '@nuxtjs/stylelint-module'
   ],
+
+  /**
+   * Tailwind CSS configuration
+   */
+  tailwindcss: {
+    cssPath: '@/assets/css/tailwind.css',
+    purgeCSSInDev: true
+  },
+
+  /**
+   * Stylelint configuration
+   */
+  stylelint: {
+    fix: true
+  },
+
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    '@nuxtjs/pwa',
-    // Doc: https://github.com/vaso2/nuxt-fontawesome#readme
-    [
-      'nuxt-fontawesome',
-      {
-        imports: [
-          {
-            set: '@fortawesome/free-solid-svg-icons',
-            icons: ['fas'],
-          },
-          {
-            set: '@fortawesome/free-brands-svg-icons',
-            icons: ['fab'],
-          },
-        ],
-      },
-    ],
-    // Doc: https://github.com/WilliamDASILVA/nuxt-facebook-pixel-module#readme
-    [
-      'nuxt-facebook-pixel-module',
-      {
-        track: 'PageView',
-        pixelId: process.env.PIXEL_FB,
-        disabled: false,
-      },
-    ],
-  ],
+  modules,
+
+  /**
+   * Feed configuration
+   */
+  feed,
+
+  /**
+   * Sitemap configuration
+   */
+  sitemap,
+
+  /**
+   * PWA configuration
+   */
+  pwa,
+
   /*
    ** Build configuration
-   ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {
-    analyze: true,
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-          options: {
-            fix: true,
-          },
-        })
-      }
-    },
-    babel: {
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            useBuiltIns: 'entry',
-            corejs: 3,
-          },
-        ],
-      ],
-      plugins: ['@babel/transform-runtime'],
-    },
-  },
+  build,
+
+  /**
+   * Listener to Nuxt event to generate amp version of all pages
+   */
+  hooks
 }
