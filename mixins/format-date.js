@@ -5,7 +5,7 @@ export default {
         if (!date) {
           return ''
         }
-        const locale = this.$i18n.locale || 'id-ID'
+        const locale = 'id-ID'
         return new Date(date).toLocaleDateString(locale, {
           day: 'numeric',
           month: 'short',
