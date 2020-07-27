@@ -14,9 +14,9 @@
               :key="item.name"
               class="socialItems hidden sm:block"
             >
-              <nuxt-link :to="item.link" :title="item.name">
+              <a :href="item.link" :title="item.name">
                 <font-awesome-icon :icon="['fab', item.name]" class="icon" />
-              </nuxt-link>
+              </a>
             </li>
             <li class="userAccount">
               <button

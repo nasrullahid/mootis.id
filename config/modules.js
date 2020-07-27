@@ -38,13 +38,13 @@ export default [
   // '@nuxtjs/sitemap',
 
   // https://github.com/nuxt-community/sentry-module
-  [
-    '@nuxtjs/sentry',
-    {
-      dsn: process.env.SENTRY_DSN,
-      sourceMapStyle: 'hidden-source-map'
-    }
-  ],
+  // [
+  //   '@nuxtjs/sentry',
+  //   {
+  //     dsn: process.env.SENTRY_DSN,
+  //     sourceMapStyle: 'hidden-source-map'
+  //   }
+  // ],
 
   // https://github.com/nuxt-community/feed-module
   // '@nuxtjs/feed',
