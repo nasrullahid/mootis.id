@@ -1,11 +1,5 @@
 <template>
-  <div
-    v-swiper:myDirectiveSwiper="swiperOptions"
-    class="swiper"
-    @ready="onSwiperRedied"
-    @click-slide="onSwiperClickSlide"
-    @slide-change-transition-start="onSwiperSlideChangeTransitionStart"
-  >
+  <div v-swiper:carousel="swiperOptions" class="swiper">
     <div class="swiper-wrapper">
       <div
         v-for="index in 4"
@@ -13,7 +7,6 @@
         class="swiper-slide"
         :style="`background-image:url(./img/slide-${index}.jpg)`"
       >
-        <!-- <img :src="`./img/slide-${index}.jpg`" class="swiper-img" /> -->
         <h3>Slide {{ index }}</h3>
       </div>
     </div>
@@ -30,17 +23,14 @@ export default {
   data() {
     return {
       swiperOptions: {
-        notNextTick: true,
         loop: true,
-        autoplay: 3000,
-        direction: 'horizontal',
-        // grabCursor: true,
-        mousewheelControl: true,
-        observeParents: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false
+        },
         pagination: {
           el: '.swiper-pagination',
-          clickable: true,
-          type: 'bullets'
+          type: 'fraction'
         },
         navigation: {
           nextEl: '.swiper-button-next',

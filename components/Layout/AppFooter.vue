@@ -117,7 +117,7 @@ export default {
   background-size: cover;
 }
 .footerMenu {
-  @apply flex bg-blue-900 bg-opacity-75 pt-8 pb-4 px-4;
+  @apply flex bg-blue-900 bg-opacity-75 pt-8 pb-4 px-4 text-gray-200;
   & h3 {
     @apply mt-2;
     text-transform: uppercase;
@@ -137,11 +137,10 @@ export default {
   & .socialNetworks {
     @apply flex list-none mt-4 mb-0 mx-0 items-center justify-start;
     & a {
-      @apply block w-10 h-10 mr-2 rounded-full shadow text-center text-2xl;
+      @apply block w-10 h-10 mr-2 rounded-full shadow text-center text-2xl bg-blue-700;
       line-height: 1.6;
-      background-color: var(--card-bg);
-      color: var(--text-normal);
       & .icon {
+        color: white;
         margin: 0;
       }
       &:focus {
@@ -157,7 +156,7 @@ export default {
 }
 .navigasi {
   & a {
-    color: var(--text-title);
+    @apply text-gray-200;
   }
   & a:hover {
     color: var(--text-link);
@@ -178,7 +177,8 @@ export default {
   }
 }
 .copyright {
-  @apply text-sm text-center p-2 bg-blue-900;
+  @apply text-sm text-center p-2 text-gray-200;
+  background: var(--bg-footer);
 }
 .footerMenu li:hover .icon {
   -webkit-animation: icnBubble 0.7s ease-in-out;

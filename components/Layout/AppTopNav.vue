@@ -42,12 +42,14 @@
               <nuxt-link
                 to="/login"
                 class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
+                title="Login"
                 @click="isOpen = false"
                 >Login</nuxt-link
               >
               <nuxt-link
                 to="/daftar"
                 class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
+                title="Daftar"
                 @click="isOpen = false"
                 >Daftar
               </nuxt-link>

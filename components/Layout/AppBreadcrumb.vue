@@ -8,14 +8,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  mounted() {
-    console.log(this)
-  }
-}
-</script>
-
 <style lang="postcss" scoped>
 .banner {
   @apply h-64 bg-blue-500 flex items-center text-center;
