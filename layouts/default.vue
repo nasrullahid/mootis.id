@@ -2,7 +2,8 @@
   <div id="top" class="mx-auto w-full">
     <AppTopNav :office-time="officeTime" :social-network="socialNetwork" />
     <AppHeader :logo="logo" :menu="menu" />
-    <AppCarousel />
+    <AppCarousel v-if="this.$route.path == '/'" />
+    <AppBreadcrumb v-else />
     <Nuxt />
     <AppFooter :contact="contact" :social-network="socialNetwork" />
     <AppToTop />
@@ -14,6 +15,7 @@ import AppToTop from '@/components/AppToTop'
 import AppTopNav from '@/components/Layout/AppTopNav'
 import AppHeader from '@/components/Layout/AppHeader'
 import AppCarousel from '@/components/Layout/AppCarousel'
+import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
 import AppFooter from '@/components/Layout/AppFooter'
 export default {
   components: {
@@ -21,6 +23,7 @@ export default {
     AppTopNav,
     AppHeader,
     AppCarousel,
+    AppBreadcrumb,
     AppFooter
   },
   data() {
