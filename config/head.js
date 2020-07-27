@@ -3,9 +3,9 @@ import { HOSTNAME } from '../constant'
 export default {
   titleTemplate(title) {
     if (title) {
-      return `${title} - Nasrullah`
+      return `${title} - Property Syariah`
     }
-    return 'Nasrullah'
+    return 'Property Syariah'
   },
   meta: [
     { charset: 'utf-8' },
@@ -17,7 +17,7 @@ export default {
       hid: 'og:image:alt',
       name: 'og:image:alt',
       property: 'og:image:alt',
-      content: 'Nasrullah'
+      content: 'Property Syariah'
     },
     { property: 'fb:admins', content: 100003000286186 },
     {
@@ -33,11 +33,11 @@ export default {
   link: [
     {
       rel: 'webmention',
-      href: 'https://webmention.io/Nasrullah.id/webmention'
+      href: 'https://webmention.io/Property Syariah.id/webmention'
     },
     {
       rel: 'pingback',
-      href: 'https://webmention.io/Nasrullah.id/xmlrpc'
+      href: 'https://webmention.io/Property Syariah.id/xmlrpc'
     },
     {
       type: 'text/plain',
@@ -69,14 +69,14 @@ export default {
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org/',
         '@type': 'WebSite',
-        name: 'Nasrullah',
-        headline: 'A personal site of Nasrullah',
-        description: 'A personal site of Nasrullah',
-        about: 'A personal site of Nasrullah',
-        keywords: 'nazcules, Nasrullah',
-        genre: ['Personal', 'Tutorial', 'Programming', 'Review', 'Science'],
+        name: 'Property Syariah',
+        headline: 'A personal site of Property Syariah',
+        description: 'A personal site of Property Syariah',
+        about: 'A personal site of Property Syariah',
+        keywords: 'property-syariah, Property Syariah',
+        genre: ['Property Syariah', 'Website Property Syariah', 'Applikasi Properti Syariah', 'Properti', 'Syariah'],
         copyrightYear: new Date().getFullYear(),
-        dateCreated: '2020-06-21',
+        dateCreated: '2020-07-27',
         inLanguage: ['Bahasa Indonesia'],
         isAccessibleForFree: 'true',
         isFamilyFriendly: 'true',
@@ -93,7 +93,7 @@ export default {
         },
         publisher: {
           '@type': 'Organization',
-          name: 'Nasrullah',
+          name: 'Property Syariah',
           sameAs: 'https://www.facebook.com/nasrullah.web.id',
           logo: {
             '@type': 'imageObject',
@@ -105,12 +105,10 @@ export default {
         creator: {
           '@type': 'Person',
           name: 'Nasrullah',
-          alternateName: 'Nasrullah',
+          alternateName: 'nazcules',
           birthDate: '1992-12-30',
           gender: { '@type': 'GenderType', alternateName: 'Male' },
-          url: [
-            `${HOSTNAME}`
-          ],
+          url: [`${HOSTNAME}`],
           sameAs: [
             'https://github.com/nazcules',
             'https://instagram.com/id.nasrullah_',

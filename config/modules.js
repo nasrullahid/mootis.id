@@ -35,7 +35,7 @@ export default [
   ],
 
   // https://github.com/nuxt-community/sitemap-module
-  '@nuxtjs/sitemap',
+  // '@nuxtjs/sitemap',
 
   // https://github.com/nuxt-community/sentry-module
   [
@@ -47,7 +47,7 @@ export default [
   ],
 
   // https://github.com/nuxt-community/feed-module
-  '@nuxtjs/feed',
+  // '@nuxtjs/feed',
 
   // https://github.com/nuxt-community/analytics-module
   [
