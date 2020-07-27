@@ -35,7 +35,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/animated.css', 'swiper/swiper-bundle.css'],
+  css: ['@/assets/css/animated.css'],
 
   /*
    ** Plugins to load before mounting the App

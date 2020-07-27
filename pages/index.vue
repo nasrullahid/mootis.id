@@ -41,7 +41,11 @@
       </h2>
     </div>
     <div class="max-w-2xl mx-auto text-center">
-      <div v-swiper:mySwiper="swiperOptions" class="swiper">
+      <div
+        v-swiper:mySwiper="swiperOptions"
+        class="swiper"
+        instanceName="testimoni"
+      >
         <div class="swiper-wrapper">
           <div v-for="index in 4" :key="index" class="swiper-slide">
             <img
@@ -50,13 +54,13 @@
               class="w-32 h-32 rounded-full mx-auto shadow-lg border-4"
             />
             <h4 class="text-2xl">Nasrullah</h4>
-            <p>
+            <blockquote>
               Lorem Ipsum adalah contoh teks atau dummy dalam industri
               percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah
               menjadi standar contoh teks sejak tahun 1500an, saat seorang
               tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan
               mengacaknya untuk menjadi sebuah buku contoh huruf.
-            </p>
+            </blockquote>
           </div>
         </div>
         <div slot="pagination" class="swiper-pagination"></div>
@@ -79,13 +83,14 @@ export default {
     return {
       swiperOptions: {
         loop: true,
+        effect: 'fade',
         autoplay: {
-          delay: 2500,
+          delay: 6000,
           disableOnInteraction: false
         },
         pagination: {
           el: '.swiper-pagination',
-          clickable: true
+          type: 'fraction'
         },
         navigation: {
           nextEl: '.swiper-button-next',
@@ -107,7 +112,7 @@ h2 {
   @apply my-4;
 }
 .swiper-slide {
-  @apply shadow-lg rounded-lg m-4 py-4 px-10;
+  @apply shadow-lg rounded-lg p-8;
   background: var(--card-bg);
 }
 .btn {
