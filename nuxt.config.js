@@ -1,13 +1,5 @@
 import { isDev } from './utils'
-import {
-  head,
-  modules,
-  feed,
-  sitemap,
-  pwa,
-  build,
-  hooks
-} from './config'
+import { head, modules, /*feed, sitemap,*/ pwa, build, hooks } from './config'
 export default {
   /*
    ** Nuxt rendering mode
@@ -98,12 +90,12 @@ export default {
   /**
    * Feed configuration
    */
-  feed,
+  // feed,
 
   /**
    * Sitemap configuration
    */
-  sitemap,
+  // sitemap,
 
   /**
    * PWA configuration
