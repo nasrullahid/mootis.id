@@ -82,8 +82,8 @@ export default {
     return {
       // title: this.$t('description'),
       bodyAttrs: {
-        class: 'dark'
-        // class: this.isDark ? 'dark' : 'light'
+        // class: 'light'
+        class: this.isDark ? 'dark' : 'light'
       }
     }
   }
