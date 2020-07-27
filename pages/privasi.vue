@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-4xl ml-auto mr-auto py-12">
+  <div class="max-w-4xl ml-auto mr-auto py-12 px-4">
     <h3>Apakah Lorem Ipsum itu?</h3>
     <p>
       Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan

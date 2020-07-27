@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-4xl ml-auto mr-auto py-12">
+  <div class="max-w-4xl ml-auto mr-auto py-12 px-4">
     <div class="content">
       <div class="logo mr-2">
         <app-img src="/logo.png" alt="Logo"></app-img>
