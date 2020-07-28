@@ -1,5 +1,5 @@
 <template>
-  <div class="banner">
+  <div class="banner" :style="`background-image: url('${imageRequired}');`">
     <div class="container mx-auto">
       <h1 class="m-0 shadow-lg text-3xl text-white capitalize">
         {{ title }}
@@ -12,9 +12,18 @@
 export default {
   name: 'AppBreadcrumb',
   props: {
+    images: {
+      type: String,
+      default: '/banner.jpg'
+    },
     title: {
       type: String,
       required: true
+    }
+  },
+  computed: {
+    imageRequired() {
+      return require(`@/assets/img${this.images}`)
     }
   }
 }
@@ -23,7 +32,6 @@ export default {
 <style lang="postcss" scoped>
 .banner {
   @apply h-64 bg-blue-500 flex items-center text-center;
-  background-image: url('/img/banner.jpg');
   background-position: center;
   background-size: cover;
 }
