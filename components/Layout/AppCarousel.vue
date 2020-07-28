@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       slickOptions: {
-        arrows: false,
+        arrows: true,
         dots: true,
         dotsClass: 'slick-dots custom-dot-class',
         infinite: true,
@@ -57,5 +57,15 @@ export default {
     );
     bottom: 2rem;
   }
+}
+</style>
+
+<style scoped>
+ul {
+  bottom: 1rem;
+}
+.custom-dot-class li {
+  width: 2rem;
+  height: 2rem;
 }
 </style>
