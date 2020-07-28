@@ -1,6 +1,6 @@
 <template>
   <section class="header bg-gray-200 py-4 shadow">
-    <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto">
       <div class="flex flex-row items-center justify-start">
         <div class="flex flex-row items-center sm:hidden pl-3">
           <button

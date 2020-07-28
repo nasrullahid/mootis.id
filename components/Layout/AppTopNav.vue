@@ -1,6 +1,6 @@
 <template>
   <section class="headerTopNav">
-    <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto">
       <div class="flex flex-row items-center">
         <div class="flex items-center justify-start w-1/2">
           <time :datetime="officeTime" class="officeTime">{{

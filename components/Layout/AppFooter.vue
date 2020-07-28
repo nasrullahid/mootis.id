@@ -2,9 +2,9 @@
   <div class="footer">
     <div class="footerMenu">
       <div
-        class="container mx-auto block flex-row items-start justify-between sm:flex"
+        class="max-w-4xl mx-auto block flex-row items-start justify-between sm:flex"
       >
-        <div class="contact">
+        <div class="contact w-full sm:w-full md:w-1/3">
           <h3>{{ appName }}</h3>
           <ul>
             <li>
@@ -40,7 +40,7 @@
             </li>
           </ul>
         </div>
-        <div class="navigasi">
+        <div class="navigasi w-full sm:w-full md:w-1/3">
           <h3>Menu Navigasi</h3>
           <ul>
             <li v-for="item in menu" :key="item.path">
@@ -51,7 +51,7 @@
             </li>
           </ul>
         </div>
-        <div class="news">
+        <div class="news w-full sm:w-full md:w-1/3">
           <h3>Properti Terbaru</h3>
           <ul>
             <li v-for="i in 4" :key="i" class="newsItem">
