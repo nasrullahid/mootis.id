@@ -1,13 +1,6 @@
 import Vue from 'vue'
-import {
-  Swiper as SwiperClass,
-  Navigation,
-  Pagination,
-  Mousewheel,
-  Autoplay,
-  EffectFade
-} from 'swiper/swiper.esm'
-import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter'
-import 'swiper/swiper-bundle.css'
-SwiperClass.use([Navigation, Pagination, Mousewheel, Autoplay, EffectFade])
-Vue.use(getAwesomeSwiper(SwiperClass))
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
+Vue.component('VueSlickCarousel', VueSlickCarousel)
