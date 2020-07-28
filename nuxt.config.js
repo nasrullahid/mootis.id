@@ -43,7 +43,8 @@ export default {
    */
   plugins: [
     // Doc: https://github.com/surmon-china/vue-awesome-swiper#readme
-    { src: '@/plugins/components.ssr', ssr: false },
+    { src: '@/plugins/components.ssr', mode: 'client', ssr: false },
+    // { src: '@/plugins/components.ssr', ssr: false },
     '@/plugins/vue-lazyload',
     '@/plugins/components.client',
     '@/plugins/components'

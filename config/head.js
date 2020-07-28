@@ -3,9 +3,9 @@ import { HOSTNAME } from '../constant'
 export default {
   titleTemplate(title) {
     if (title) {
-      return `${title} - Property Syariah`
+      return `${title} - ${process.env.APP_NAME}`
     }
-    return 'Property Syariah'
+    return process.env.APP_NAME
   },
   meta: [
     { charset: 'utf-8' },
@@ -17,7 +17,7 @@ export default {
       hid: 'og:image:alt',
       name: 'og:image:alt',
       property: 'og:image:alt',
-      content: 'Property Syariah'
+      content: process.env.APP_NAME
     },
     { property: 'fb:admins', content: 100003000286186 },
     {
@@ -33,11 +33,11 @@ export default {
   link: [
     {
       rel: 'webmention',
-      href: 'https://webmention.io/Property Syariah.id/webmention'
+      href: 'https://webmention.io/Medina.id/webmention'
     },
     {
       rel: 'pingback',
-      href: 'https://webmention.io/Property Syariah.id/xmlrpc'
+      href: 'https://webmention.io/Medina.id/xmlrpc'
     },
     {
       type: 'text/plain',
@@ -69,12 +69,12 @@ export default {
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org/',
         '@type': 'WebSite',
-        name: 'Property Syariah',
-        headline: 'A personal site of Property Syariah',
-        description: 'A personal site of Property Syariah',
-        about: 'A personal site of Property Syariah',
-        keywords: 'property-syariah, Property Syariah',
-        genre: ['Property Syariah', 'Website Property Syariah', 'Applikasi Properti Syariah', 'Properti', 'Syariah'],
+        name: process.env.APP_NAME,
+        headline: 'A personal site of Medina',
+        description: 'A personal site of Medina',
+        about: 'A personal site of Medina',
+        keywords: 'property-syariah, Medina',
+        genre: [process.env.APP_NAME, 'Website Medina', 'Applikasi Properti Syariah', 'Properti', 'Syariah'],
         copyrightYear: new Date().getFullYear(),
         dateCreated: '2020-07-27',
         inLanguage: ['Bahasa Indonesia'],
@@ -93,7 +93,7 @@ export default {
         },
         publisher: {
           '@type': 'Organization',
-          name: 'Property Syariah',
+          name: process.env.APP_NAME,
           sameAs: 'https://www.facebook.com/nasrullah.web.id',
           logo: {
             '@type': 'imageObject',
