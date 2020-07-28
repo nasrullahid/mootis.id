@@ -51,41 +51,14 @@
         </h2>
       </div>
       <div class="max-w-4xl mx-auto text-center">
-        <!-- <div
-        v-swiper:mySwiper="swiperOptions"
-        class="swiper"
-        instanceName="testimoni"
-      >
-        <div class="swiper-wrapper">
-          <div v-for="index in 4" :key="index" class="swiper-slide">
-            <img
-              :src="`./img/slide-${index}.jpg`"
-              alt="Nasrullah"
-              class="w-32 h-32 rounded-full mx-auto shadow-lg border-4"
-            />
-            <h4 class="text-2xl">Nasrullah</h4>
-            <blockquote>
-              Lorem Ipsum adalah contoh teks atau dummy dalam industri
-              percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah
-              menjadi standar contoh teks sejak tahun 1500an, saat seorang
-              tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan
-              mengacaknya untuk menjadi sebuah buku contoh huruf.
-            </blockquote>
-          </div>
-        </div>
-        <div slot="pagination" class="swiper-pagination"></div>
-        <div slot="button-prev" class="swiper-button-prev"></div>
-        <div slot="button-next" class="swiper-button-next"></div>
-      </div> -->
-        <client-only>
-          <swiper ref="testimoni" class="swiper" :options="swiperOptions">
-            <swiper-slide v-for="index in 4" :key="index" class="swiper-slide">
+        <client-only placeholder="Loading testimoni">
+          <VueSlickCarousel v-bind="slickOptions">
+            <div v-for="index in 4" :key="index" class="img-wrapper">
               <img
                 :src="`./img/slide-${index}.jpg`"
-                alt="Nasrullah"
                 class="w-32 h-32 rounded-full mx-auto shadow-lg border-4"
               />
-              <h4 class="text-2xl">Nasrullah</h4>
+              <h3>Lorem ipsum dolor sit amet in slide {{ index }}</h3>
               <blockquote>
                 Lorem Ipsum adalah contoh teks atau dummy dalam industri
                 percetakan dan penataan huruf atau typesetting. Lorem Ipsum
@@ -94,11 +67,8 @@
                 kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh
                 huruf.
               </blockquote>
-            </swiper-slide>
-            <div slot="pagination" class="swiper-pagination"></div>
-            <div slot="button-prev" class="swiper-button-prev"></div>
-            <div slot="button-next" class="swiper-button-next"></div>
-          </swiper>
+            </div>
+          </VueSlickCarousel>
         </client-only>
       </div>
     </div>
@@ -117,6 +87,20 @@ export default {
   },
   data() {
     return {
+      slickOptions: {
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        fade: true,
+        pauseOnDotsHover: true,
+        pauseOnFocus: true,
+        pauseOnHover: true,
+        speed: 1000,
+        autoplaySpeed: 5000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 0
+      },
       swiperOptions: {
         loop: true,
         effect: 'fade',
@@ -173,9 +157,30 @@ h2 {
 .postProperty {
   @apply my-4;
 }
-.swiper-slide {
+.img-wrapper {
   @apply shadow-lg rounded-lg p-8;
   background: var(--card-bg);
+}
+.slick-prev {
+  left: 25px;
+  z-index: 10;
+}
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
 }
 .btn {
   @apply py-4 px-12 rounded-lg shadow-xl bg-blue-700 text-white;
