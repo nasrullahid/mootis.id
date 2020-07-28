@@ -74,7 +74,7 @@ export default {
   },
   head() {
     return {
-      title: 'PT. Megah Digdaya Nusantara',
+      title: process.env.COMPANY_NAME,
       bodyAttrs: {
         class: 'light'
         // class: this.isDark ? 'dark' : 'light'
