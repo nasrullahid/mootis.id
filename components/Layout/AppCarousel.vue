@@ -1,5 +1,5 @@
 <template>
-  <div v-swiper:carousel="swiperOptions" class="swiper">
+  <!-- <div v-swiper:carousel="swiperOptions" class="swiper">
     <div class="swiper-wrapper">
       <div
         v-for="index in 4"
@@ -13,7 +13,21 @@
     <div slot="pagination" class="swiper-pagination"></div>
     <div slot="button-prev" class="swiper-button-prev"></div>
     <div slot="button-next" class="swiper-button-next"></div>
-  </div>
+  </div> -->
+  <client-only>
+    <swiper ref="carousel" class="swiper" :options="swiperOptions">
+      <swiper-slide
+        v-for="index in 4"
+        :key="index"
+        class="swiper-slide"
+        :style="`background-image:url(./img/slide-${index}.jpg)`"
+        ><h3>Slide {{ index }}</h3></swiper-slide
+      >
+      <div slot="pagination" class="swiper-pagination"></div>
+      <div slot="button-prev" class="swiper-button-prev"></div>
+      <div slot="button-next" class="swiper-button-next"></div>
+    </swiper>
+  </client-only>
 </template>
 
 <script>
