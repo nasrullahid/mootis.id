@@ -1,91 +1,61 @@
 <template>
-  <!-- <div v-swiper:carousel="swiperOptions" class="swiper">
-    <div class="swiper-wrapper">
-      <div
-        v-for="index in 4"
-        :key="index"
-        class="swiper-slide"
-        :style="`background-image:url(./img/slide-${index}.jpg)`"
-      >
-        <h3>Slide {{ index }}</h3>
+  <client-only placeholder="Loading slide">
+    <VueSlickCarousel v-bind="slickOptions">
+      <div v-for="index in 4" :key="index" class="img-wrapper">
+        <img
+          :src="`./img/slide-${index}.jpg`"
+          alt="Nasrullah"
+          class="w-full h-full"
+        />
+        <h3>Lorem ipsum dolor sit amet in slide {{ index }}</h3>
       </div>
-    </div>
-    <div slot="pagination" class="swiper-pagination"></div>
-    <div slot="button-prev" class="swiper-button-prev"></div>
-    <div slot="button-next" class="swiper-button-next"></div>
-  </div> -->
-  <client-only>
-    <swiper ref="carousel" class="swiper" :options="swiperOptions">
-      <swiper-slide
-        v-for="index in 4"
-        :key="index"
-        class="swiper-slide"
-        :style="`background-image:url(./img/slide-${index}.jpg)`"
-        ><h3>Slide {{ index }}</h3></swiper-slide
-      >
-      <div slot="pagination" class="swiper-pagination"></div>
-      <div slot="button-prev" class="swiper-button-prev"></div>
-      <div slot="button-next" class="swiper-button-next"></div>
-    </swiper>
+    </VueSlickCarousel>
   </client-only>
 </template>
 
 <script>
-/* eslint-disable */
 export default {
   name: 'SwiperNuxt',
   data() {
     return {
-      swiperOptions: {
-        loop: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false
-        },
-        effect: 'fade',
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }
+      slickOptions: {
+        arrows: false,
+        dots: true,
+        dotsClass: 'slick-dots custom-dot-class',
+        infinite: true,
+        fade: true,
+        autoplay: true,
+        pauseOnDotsHover: true,
+        pauseOnFocus: true,
+        pauseOnHover: true,
+        speed: 2000,
+        autoplaySpeed: 5000,
+        cssEase: 'linear',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 0
       }
-    }
-  },
-  methods: {
-    onSwiperRedied(swiper) {
-      console.log('Swiper redied!', swiper)
-    },
-    onSwiperSlideChangeTransitionStart() {
-      console.log('SwiperSlideChangeTransitionStart!')
-    },
-    onSwiperClickSlide(index, reallyIndex) {
-      console.log('Swiper click slide!', reallyIndex)
     }
   }
 }
 </script>
 
-<style scoped>
-.swiper {
+<style lang="postcss" scoped>
+.img-wrapper {
+  @apply relative;
   height: 75vh;
   width: 100%;
-}
-.swiper-slide {
-  text-align: center;
-  font-size: 38px;
-  font-weight: 700;
-  background-color: #eee;
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-pagination > .swiper-pagination-bullet {
-  background-color: red;
+  & img {
+    @apply object-cover object-center;
+  }
+  & h3 {
+    @apply absolute m-0 mb-4 py-4 px-8 text-white max-w-2xl text-3xl leading-normal;
+    background: linear-gradient(
+      to right,
+      rgba(17, 74, 130, 0.95) 0%,
+      rgba(92, 105, 186, 0.95) 100%
+    );
+    bottom: 2rem;
+  }
 }
 </style>
