@@ -78,25 +78,15 @@ export default {
     return {
       isOpen: false
     }
-  },
-  created() {
-    // const handleEscape = (e) => {
-    //   if (e.key === 'Esc' || e.key === 'Escape') {
-    //     this.isOpen = false
-    //   }
-    // }
-    // document.addEventListener('keydown', handleEscape)
-    // this.$once('hook:beforeDestroy', () => {
-    //   document.removeEventListener('keydown', handleEscape)
-    // })
   }
 }
 </script>
 
 <style scoped>
 .headerTopNav {
-  @apply shadow bg-blue-500 p-1 text-sm;
-  color: #f7fafc;
+  @apply shadow p-1 text-sm;
+  background: var(--bg-primary);
+  color: var(--text-normal);
 }
 .officeTime {
   -o-text-overflow: ellipsis;
@@ -115,10 +105,10 @@ export default {
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   & a {
-    color: #e2e8f0;
+    color: var(--text-normal);
   }
   & a:hover {
-    color: #f7fafc;
+    color: var(--text-link);
   }
 }
 .socialItems {

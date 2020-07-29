@@ -47,7 +47,7 @@ export default {
 
 <style lang="postcss" scoped>
 .post {
-  @apply rounded shadow overflow-hidden relative max-w-2xl;
+  @apply rounded shadow overflow-hidden relative max-w-4xl;
   background-color: var(--card-bg);
 
   &:hover {
@@ -56,10 +56,14 @@ export default {
 
   &__thumbnail {
     @apply relative;
+    max-height: 64rem;
+    .image-placeholder {
+      max-height: 24rem;
+    }
   }
 
   &__address {
-    @apply leading-normal p-2 text-sm absolute bg-blue-900 bg-opacity-75 text-white w-full;
+    @apply leading-normal py-2 px-6 text-sm absolute bg-blue-900 bg-opacity-75 text-white w-full;
     bottom: 0;
     left: 0;
 
@@ -69,12 +73,12 @@ export default {
   }
 
   &__title {
-    @apply m-0 p-4 text-center leading-normal capitalize font-bold text-2xl;
+    @apply m-0 p-6 leading-normal capitalize font-bold text-2xl;
     color: var(--text-normal);
   }
 
   &__content {
-    @apply p-4 shadow m-0 leading-normal;
+    @apply pb-6 px-6 m-0 leading-normal;
   }
 
   &__link {

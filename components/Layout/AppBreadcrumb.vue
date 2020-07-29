@@ -1,7 +1,7 @@
 <template>
-  <div class="banner" :style="`background-image: url('${imageRequired}');`">
+  <div class="banner" :style="`background-image: url('./img/banner.jpg');`">
     <div class="container mx-auto">
-      <h1 class="m-0 shadow-lg text-3xl text-white capitalize">
+      <h1 class="m-0 text-3xl text-white capitalize">
         {{ title }}
       </h1>
     </div>
@@ -19,11 +19,6 @@ export default {
     title: {
       type: String,
       required: true
-    }
-  },
-  computed: {
-    imageRequired() {
-      return require(`@/assets/img${this.images}`)
     }
   }
 }

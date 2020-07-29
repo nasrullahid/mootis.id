@@ -79,7 +79,7 @@ export default {
 <style lang="postcss">
 /* purgecss start ignore */
 .blog-item {
-  @apply mb-4 mx-4 max-w-3xl rounded overflow-hidden shadow relative;
+  @apply mb-4 mx-4 max-w-4xl rounded overflow-hidden shadow relative;
   background-color: var(--card-bg);
 
   img {

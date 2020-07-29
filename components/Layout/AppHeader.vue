@@ -1,5 +1,5 @@
 <template>
-  <section class="header bg-gray-200 py-4 shadow">
+  <section class="header py-4 shadow">
     <div class="max-w-4xl mx-auto">
       <div class="flex flex-row items-center justify-start">
         <div class="flex flex-row items-center sm:hidden pl-3">
@@ -27,7 +27,7 @@
               <nuxt-link
                 :to="item.path"
                 :title="item.name"
-                class="flex items-center text-blue-300 hover:text-blue-500 py-2 px-4"
+                class="flex items-center py-2 px-4"
               >
                 <font-awesome-icon :icon="['fas', item.icon]" class="icon" />
                 <span>{{ item.name }}</span>
@@ -56,7 +56,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
+.header {
+  background: var(--card-bg);
+}
 .headerMenu {
   margin-bottom: 0;
   display: -webkit-box;
@@ -75,7 +78,7 @@ export default {
   -webkit-box-direction: normal;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  color: #444;
+  color: var(--text-normal);
   font-size: 0.9rem;
   line-height: 1.63636;
   margin-left: 1rem;
@@ -90,7 +93,7 @@ export default {
   );
   background-repeat: repeat-x;
   background-size: 100%;
-  color: #4a5568;
+  color: var(--text-normal);
   padding-left: 1rem;
   text-decoration: none;
 }
