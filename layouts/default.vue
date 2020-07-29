@@ -17,6 +17,8 @@ import AppSwitchTheme from '@/components/AppSwitchTheme'
 import AppTopNav from '@/components/Layout/AppTopNav'
 import AppHeader from '@/components/Layout/AppHeader'
 import AppFooter from '@/components/Layout/AppFooter'
+
+const Cookie = process.client ? require('js-cookie') : undefined
 export default {
   components: {
     AppToTop,
@@ -64,7 +66,14 @@ export default {
   },
   methods: {
     initColorScheme() {
-      if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+      const isDark = Cookie.get('d')
+      if (isDark) {
+        if (parseInt(isDark)) {
+          this.isDark = true
+        }
+      } else if (
+        window.matchMedia('(prefers-color-scheme)').media !== 'not all'
+      ) {
         const darkModeMediaQuery = window.matchMedia(
           '(prefers-color-scheme: dark)'
         )
