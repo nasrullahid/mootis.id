@@ -68,9 +68,9 @@ export default {
 <style lang="postcss">
 /* purgecss start ignore */
 .switch {
-  @apply absolute z-20;
-  top: 1rem;
-  right: 1.5rem;
+  @apply fixed z-20;
+  bottom: 0.5rem;
+  left: 1.5rem;
 
   &__btn {
     @apply w-12 h-12 rounded-full shadow;

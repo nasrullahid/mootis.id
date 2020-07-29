@@ -26,14 +26,5 @@
     }
   }
 }
-
-@media (max-width: 992px) {
-  .to-top {
-    &__link {
-      background-color: var(--bg);
-    }
-  }
-}
-
 /* purgecss end ignore */
 </style>
