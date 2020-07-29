@@ -11,7 +11,10 @@
           <client-only placeholder="Loading slide">
             <VueSlickCarousel v-bind="slickOptions">
               <div v-for="index in 4" :key="index" class="post__slick">
-                <app-img :src="`/properti/slide-${index}.jpg`" />
+                <app-img
+                  :src="`/properti/slide-${index}.jpg`"
+                  :alt="post.title"
+                />
               </div>
             </VueSlickCarousel>
           </client-only>
@@ -219,6 +222,11 @@ export default {
       }
     }
   },
+  computed: {
+    imageRequired() {
+      return require(`~/assets/img/properti/${this.post.banner}`)
+    }
+  },
   created() {
     const slug = this.$route && this.$route.params && this.$route.params.slug
     const fullPath = `${HOSTNAME}/properi/${slug}`
@@ -230,6 +238,8 @@ export default {
       description:
         'Al Jazeera Residence Moncongloe, hunian islami eksklusif di Sulawesi Selatan yang menghadirkan konsep islami modern eksklusif, dengan desain arsitektur minimalis modern dan menedepankan aspek green living concept yang religius, humanis, dan prestisius',
       address: 'Moncongloe Maros Sulawesi Selatan',
+      keywords:
+        'Residence, hunian islami eksklusif, tanpa bank, tanpa akad bathil, tanpa riba, tanpa sita',
       postedDate: new Date(),
       updatedDate: new Date(),
       sitePlan: 'siteplan.jpg',
@@ -294,16 +304,70 @@ export default {
       title: this.post.title,
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          property: 'title',
+          content: this.post.title
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          property: 'description',
+          content: this.post.description
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          property: 'keywords',
+          content: this.post.keywords
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: this.post.title
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: this.post.description
+        },
+        {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: `${HOSTNAME}/properti/${this.post.slug}`
+          content: `${HOSTNAME}/properti/${this.post.slug}/`
         },
         {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          content: `${HOSTNAME}/img/properti/${this.post.banner}`
+          content: `${HOSTNAME}${this.imageRequired.src}`
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          property: 'twitter:title',
+          content: this.post.title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          property: 'twitter:description',
+          content: this.post.description
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          property: 'twitter:url',
+          content: `${HOSTNAME}/properti/${this.post.slug}/`
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          property: 'twitter:image',
+          content: `${HOSTNAME}${this.imageRequired.src}`
         }
       ],
       link: [
@@ -312,10 +376,6 @@ export default {
           type: 'application/rss+xml',
           HOSTNAME,
           title: `${this.post.title} - ${process.env.APP_NAME}`
-        },
-        {
-          rel: 'amphtml',
-          href: `${HOSTNAME}/amp/properti/${this.post.slug}`
         }
       ]
     }

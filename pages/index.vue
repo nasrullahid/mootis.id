@@ -139,6 +139,11 @@ export default {
       ]
     }
   },
+  computed: {
+    imageRequired() {
+      return require('~/assets/img/properti/slide-2.jpg')
+    }
+  },
   mounted() {
     this.$fb.enable()
   },
@@ -146,6 +151,36 @@ export default {
     return {
       title: process.env.COMPANY_NAME,
       meta: [
+        {
+          hid: 'title',
+          name: 'title',
+          property: 'title',
+          content: `${process.env.COMPANY_NAME} - ${process.env.APP_NAME}`
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          property: 'description',
+          content: process.env.DESCRIPTION
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          property: 'keywords',
+          content: process.env.KEYWORDS
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: `${process.env.COMPANY_NAME} - ${process.env.APP_NAME}`
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: process.env.DESCRIPTION
+        },
         {
           hid: 'og:url',
           name: 'og:url',
@@ -156,7 +191,31 @@ export default {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          content: `${HOSTNAME}/img/slide-2.jpg`
+          content: `${HOSTNAME}${this.imageRequired.src}`
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          property: 'twitter:title',
+          content: `${process.env.COMPANY_NAME} - ${process.env.APP_NAME}`
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          property: 'twitter:description',
+          content: process.env.DESCRIPTION
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          property: 'twitter:url',
+          content: HOSTNAME
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          property: 'twitter:image',
+          content: `${HOSTNAME}${this.imageRequired.src}`
         }
       ],
       link: [
@@ -165,10 +224,6 @@ export default {
           type: 'application/rss+xml',
           HOSTNAME,
           title: `${process.env.COMPANY_NAME} - ${process.env.APP_NAME}`
-        },
-        {
-          rel: 'amphtml',
-          href: `${HOSTNAME}/amp`
         }
       ]
     }
