@@ -2,20 +2,25 @@
   <div id="top" class="mx-auto w-full">
     <AppTopNav :office-time="officeTime" :social-network="socialNetwork" />
     <AppHeader :logo="logo" :menu="menu" />
-    <Nuxt />
+    <div class="content-wrapper">
+      <Nuxt />
+    </div>
     <AppFooter :contact="contact" :social-network="socialNetwork" />
     <AppToTop />
+    <AppSwitchTheme v-model="isDark" />
   </div>
 </template>
 
 <script>
 import AppToTop from '@/components/AppToTop'
+import AppSwitchTheme from '@/components/AppSwitchTheme'
 import AppTopNav from '@/components/Layout/AppTopNav'
 import AppHeader from '@/components/Layout/AppHeader'
 import AppFooter from '@/components/Layout/AppFooter'
 export default {
   components: {
     AppToTop,
+    AppSwitchTheme,
     AppTopNav,
     AppHeader,
     AppFooter
@@ -42,7 +47,8 @@ export default {
       menu: [
         { path: '/tentang-kami', name: 'Tentang Kami', icon: 'user-friends' },
         { path: '/properti', name: 'Properti', icon: 'house-user' },
-        { path: '/artikel', name: 'Artikel', icon: 'newspaper' }
+        { path: '/artikel', name: 'Artikel', icon: 'newspaper' },
+        { path: '/bantuan', name: 'Bantuan', icon: 'question-circle' }
       ],
       contact: {
         address: 'Jl. Ayah Syeh Yusuf, Moncongloe Lappara, Kec. Moncongloe',
@@ -76,8 +82,7 @@ export default {
     return {
       title: process.env.COMPANY_NAME,
       bodyAttrs: {
-        class: 'light'
-        // class: this.isDark ? 'dark' : 'light'
+        class: this.isDark ? 'dark' : 'light'
       }
     }
   }
