@@ -24,7 +24,7 @@
                 @click="isOpen = !isOpen"
               >
                 <font-awesome-icon :icon="['fas', 'user']" class="icon" />
-                <span class="hidden sm:block">Welcome, Guest</span>
+                <span class="hidden sm:inline">Welcome, Guest</span>
               </button>
               <button
                 v-if="isOpen"
