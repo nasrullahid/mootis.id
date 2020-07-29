@@ -49,8 +49,7 @@ export default {
       menu: [
         { path: '/tentang-kami', name: 'Tentang Kami', icon: 'user-friends' },
         { path: '/properti', name: 'Properti', icon: 'house-user' },
-        { path: '/artikel', name: 'Artikel', icon: 'newspaper' },
-        { path: '/bantuan', name: 'Bantuan', icon: 'question-circle' }
+        { path: '/artikel', name: 'Artikel', icon: 'newspaper' }
       ],
       contact: {
         address: 'Jl. Ayah Syeh Yusuf, Moncongloe Lappara, Kec. Moncongloe',
