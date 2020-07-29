@@ -19,6 +19,7 @@ body {
   &.light {
     --bg: theme('colors.gray.200');
     --bg-disabled: theme('colors.gray.100');
+    --bg-primary:theme('colors.blue.400');
     --bg-footer:theme('colors.blue.900');
     --text-normal: theme('colors.gray.700');
     --text-disabled: theme('colors.gray.400');
@@ -33,6 +34,7 @@ body {
   &.dark {
     --bg: theme('colors.gray.800');
     --bg-disabled: theme('colors.gray.600');
+    --bg-primary:theme('colors.blue.900');
     --bg-footer:theme('colors.blue.900');
     --text-normal: theme('colors.gray.300');
     --text-disabled: theme('colors.gray.500');
@@ -42,7 +44,15 @@ body {
     --inline-code-bg: theme('colors.gray.900');
     --inline-code-border: theme('colors.gray.800');
     --inline-code-text: theme('colors.gray.300');
+
+    & .content-wrapper img{
+      filter: brightness(0.5);
+    }
+    & .footer img{
+      filter: brightness(0.5);
+    }
   }
+
 }
 
 a {
@@ -200,80 +210,6 @@ quote {
   }
 }
 
-.demo {
-  @apply mb-8;
-
-  &__interactive {
-    @apply p-4 rounded;
-    border-color: var(--inline-code-bg);
-
-    input:not([type=checkbox]):not([type=radio]),
-    select,
-    button {
-      @apply mb-3 py-1 px-2 rounded;
-      background-color: var(--bg);
-
-      &:focus {
-        outline-color: var(--text-link)
-      }
-
-      &:not(:last-child) {
-        @apply mr-2;
-      }
-
-      &:disabled {
-        background-color: var(--bg-disabled);
-        color: var(--text-disabled)
-      }
-    }
-  }
-
-  &--combined {
-    .demo {
-      &__interactive {
-        @apply border-t-2 border-l-2 border-r-2;
-        border-radius: .5rem .5rem 0 0;
-      }
-
-      &-card:not(.demo-card--custom--floating) {
-        @apply rounded-none
-      }
-
-      &__code {
-        border-radius: 0 0 .5rem .5rem;
-      }
-    }
-  }
-}
-
-.demo-card {
-  @apply rounded p-4;
-  background-color: var(--bg);
-
-  hr {
-    @apply my-5;
-  }
-
-  input,
-  select,
-  button {
-    @apply mb-3 py-1 px-2 rounded;
-    background-color: var(--card-bg);
-
-    &:focus {
-      outline-color: var(--text-link)
-    }
-
-    &:not(:last-child) {
-      @apply mr-2;
-    }
-
-    &:disabled {
-      background-color: var(--bg-disabled);
-      color: var(--text-disabled)
-    }
-  }
-}
 
 .btn, .textarea, .input {
   @apply mb-3 mt-1 py-1 px-2 rounded;
