@@ -11,7 +11,10 @@
           <client-only placeholder="Loading slide">
             <VueSlickCarousel v-bind="slickOptions">
               <div v-for="index in 4" :key="index" class="post__slick">
-                <img :src="`../img/slide-${index}.jpg`" class="w-full h-full" />
+                <app-img
+                  :src="`/properti/slide-${index}.jpg`"
+                  class="w-full h-full"
+                />
               </div>
             </VueSlickCarousel>
           </client-only>
