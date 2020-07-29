@@ -46,10 +46,10 @@ body {
     --inline-code-text: theme('colors.gray.300');
 
     & .content-wrapper img{
-      filter: brightness(0.5);
+      filter: brightness(0.7);
     }
     & .footer img{
-      filter: brightness(0.5);
+      filter: brightness(0.7);
     }
   }
 
@@ -105,23 +105,6 @@ h5 {
 
 h6 {
   @apply text-xs;
-}
-
-p > code,
-li > code,
-strong > code {
-  @apply text-left whitespace-pre py-1 px-2 rounded border inline;
-  background-color: var(--inline-code-bg);
-  border-color: var(--inline-code-border);
-  color: var(--inline-code-text);
-  hyphens: none;
-  font-family: 'Fira Code', monospace;
-  font-weight: normal;
-}
-
-pre > code {
-  @apply rounded;
-  cursor: text;
 }
 
 blockquote,
@@ -182,7 +165,6 @@ quote {
 
 .embed {
   @apply relative block h-0 p-0 overflow-hidden mb-8;
-  @apply mb-8;
 
   .embed__item,
   iframe,
