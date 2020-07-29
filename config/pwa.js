@@ -3,24 +3,24 @@ import { HOSTNAME } from '../constant'
 export default {
   // https://pwa.nuxtjs.org/modules/meta.html
   meta: {
-    name: 'Nasrullah',
-    description: 'A personal site of Nasrullah',
+    name: process.env.APP_NAME,
+    description: process.env.DESCRIPTION,
     lang: 'id',
     ogHost: `${HOSTNAME}`,
     twitterCard: 'summary_large_image',
-    twitterSite: '@nasrullahID',
-    twitterCreator: '@nasrullahID'
+    twitterSite: process.env.TWITTER_SITE,
+    twitterCreator: process.env.TWITTER_CREATOR
   },
 
   // https://pwa.nuxtjs.org/modules/manifest.html
   manifest: {
-    name: 'Nasrullah',
-    short_name: 'Nasrullah',
+    name: process.env.COMPANY_NAME,
+    short_name: process.env.APP_NAME,
     start_url: '/?utm_source=homescreen',
-    description: 'A personal site of Nasrullah',
+    description: process.env.DESCRIPTION,
     lang: 'id',
-    background_color: '#2D3748',
-    theme_color: '#2D3748'
+    background_color: '#edf2f7',
+    theme_color: '#2a4365'
   },
 
   // https://pwa.nuxtjs.org/modules/workbox.html
