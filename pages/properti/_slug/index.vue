@@ -37,6 +37,10 @@
             <p class="mb-0">{{ post.description }}</p>
           </div>
 
+          <div v-if="post.video" class="post__content__video">
+            <app-video :src="post.video" />
+          </div>
+
           <div class="post__content__fasilitas">
             <h3 class="mb-4">Fasilitas yang Anda Dapatkan</h3>
             <ul>
@@ -207,6 +211,7 @@ export default {
       postedDate: new Date(),
       updatedDate: new Date(),
       sitePlan: 'siteplan.jpg',
+      video: 'https://www.youtube.com/embed/8B9Kz5m9xh8',
       tipeUnit: [
         {
           tipe: 'Tipe 48/60',
@@ -307,7 +312,14 @@ export default {
     &__description {
       @apply m-0;
       p {
-        @apply shadow bg-gray-600 rounded-lg px-4 py-6 text-center;
+        @apply shadow bg-gray-600 rounded px-4 py-6 text-center;
+      }
+    }
+
+    &__video {
+      @apply mt-6;
+      .embed {
+        @apply mb-0 rounded shadow;
       }
     }
 
@@ -349,7 +361,16 @@ export default {
       }
     }
 
+    &__maps {
+      .embed {
+        @apply mb-0 rounded shadow;
+      }
+    }
+
     &__form {
+      p {
+        @apply leading-normal;
+      }
       form {
         label {
           @apply block text-gray-500 mb-1 pr-4 text-base;
