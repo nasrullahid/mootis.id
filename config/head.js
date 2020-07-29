@@ -19,26 +19,18 @@ export default {
       property: 'og:image:alt',
       content: process.env.APP_NAME
     },
-    { property: 'fb:admins', content: 100003000286186 },
+    { property: 'fb:admins', content: process.env.FB_ADMIN },
     {
       property: 'fb:app_id',
-      content: 267913173658573
+      content: process.env.FB_APPID
     },
-    { property: 'fb:pages', content: 632770976865033 },
+    { property: 'fb:pages', content: process.env.FB_PAGE },
     {
       name: 'google-site-verification',
-      content: 'uDWa7gsQlLiIe_Nk0fG5AvaW8vyEyOFuAZNDdmaZB4M'
+      content: process.env.GSITE_VERIFICATION
     }
   ],
   link: [
-    {
-      rel: 'webmention',
-      href: 'https://webmention.io/Medina.id/webmention'
-    },
-    {
-      rel: 'pingback',
-      href: 'https://webmention.io/Medina.id/xmlrpc'
-    },
     {
       type: 'text/plain',
       rel: 'author',
@@ -51,14 +43,6 @@ export default {
     {
       rel: 'dns-prefetch',
       href: 'https://fonts.gstatic.com'
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://d33wubrfki0l68.cloudfront.net'
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://www.google-analytics.com'
     }
   ],
   // Taken from: https://github.com/manniL/lichter.io/blob/master/config/head.js
@@ -70,11 +54,10 @@ export default {
         '@context': 'https://schema.org/',
         '@type': 'WebSite',
         name: process.env.APP_NAME,
-        headline: 'A personal site of Medina',
-        description: 'A personal site of Medina',
-        about: 'A personal site of Medina',
-        keywords: 'property-syariah, Medina',
-        genre: [process.env.APP_NAME, 'Website Medina', 'Applikasi Properti Syariah', 'Properti', 'Syariah'],
+        headline: process.env.DESCRIPTION,
+        description: process.env.DESCRIPTION,
+        about: process.env.DESCRIPTION,
+        keywords: process.env.KEYWORDS,
         copyrightYear: new Date().getFullYear(),
         dateCreated: '2020-07-27',
         inLanguage: ['Bahasa Indonesia'],
@@ -104,20 +87,11 @@ export default {
         },
         creator: {
           '@type': 'Person',
-          name: 'Nasrullah',
-          alternateName: 'nazcules',
+          name: process.env.CREATOR_NAME,
+          alternateName: process.env.CREATOR_ALTERNATE,
           birthDate: '1992-12-30',
           gender: { '@type': 'GenderType', alternateName: 'Male' },
-          url: [`${HOSTNAME}`],
-          sameAs: [
-            'https://github.com/nazcules',
-            'https://instagram.com/id.nasrullah_',
-            'https://pinterest.com/nazcules',
-            'https://plus.google.com/+nazcules',
-            'https://twitter.com/nasrullahID',
-            'https://www.facebook.com/nasrullah.web.id',
-            'https://www.linkedin.com/in/nazcules/'
-          ]
+          url: [`${HOSTNAME}`]
         }
       })
     }

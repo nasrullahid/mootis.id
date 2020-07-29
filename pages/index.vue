@@ -87,6 +87,8 @@
 import AppCarousel from '@/components/Layout/AppCarousel'
 import AppPost from '@/components/AppPost'
 import AppBlog from '@/components/AppBlog'
+
+import { HOSTNAME } from '~/constant'
 export default {
   components: {
     AppCarousel,
@@ -108,22 +110,6 @@ export default {
         slidesToShow: 1,
         slidesToScroll: 1,
         initialSlide: 0
-      },
-      swiperOptions: {
-        loop: true,
-        effect: 'fade',
-        autoplay: {
-          delay: 6000,
-          disableOnInteraction: false
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'fraction'
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }
       },
       post: [
         {
@@ -155,6 +141,37 @@ export default {
   },
   mounted() {
     this.$fb.enable()
+  },
+  head() {
+    return {
+      title: process.env.COMPANY_NAME,
+      meta: [
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          property: 'og:url',
+          content: HOSTNAME
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          property: 'og:image',
+          content: `${HOSTNAME}/img/slide-2.jpg`
+        }
+      ],
+      link: [
+        {
+          rel: 'alternate',
+          type: 'application/rss+xml',
+          HOSTNAME,
+          title: `${process.env.COMPANY_NAME} - ${process.env.APP_NAME}`
+        },
+        {
+          rel: 'amphtml',
+          href: `${HOSTNAME}/amp`
+        }
+      ]
+    }
   }
 }
 </script>

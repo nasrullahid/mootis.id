@@ -288,6 +288,37 @@ export default {
       const element = document.querySelector(hash)
       element.scrollIntoView({})
     }
+  },
+  head() {
+    return {
+      title: this.post.title,
+      meta: [
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          property: 'og:url',
+          content: `${HOSTNAME}/properti/${this.post.slug}`
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          property: 'og:image',
+          content: `${HOSTNAME}/img/properti/${this.post.banner}`
+        }
+      ],
+      link: [
+        {
+          rel: 'alternate',
+          type: 'application/rss+xml',
+          HOSTNAME,
+          title: `${this.post.title} - ${process.env.APP_NAME}`
+        },
+        {
+          rel: 'amphtml',
+          href: `${HOSTNAME}/amp/properti/${this.post.slug}`
+        }
+      ]
+    }
   }
 }
 </script>

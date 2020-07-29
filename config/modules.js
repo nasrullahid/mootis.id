@@ -29,7 +29,7 @@ export default [
     'nuxt-facebook-pixel-module',
     {
       track: 'PageView',
-      pixelId: process.env.PIXEL_FB,
+      pixelId: process.env.FB_PIXEL,
       disabled: true
     }
   ],
