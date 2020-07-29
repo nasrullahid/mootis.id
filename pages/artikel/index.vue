@@ -28,6 +28,9 @@ export default {
   },
   data() {
     return {}
+  },
+  mounted() {
+    this.$fb.enable()
   }
 }
 </script>

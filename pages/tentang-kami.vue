@@ -89,6 +89,9 @@ import { HOSTNAME } from '~/constant'
 export default {
   name: 'TentangKami',
   components: { AppBreadcrumb },
+  mounted() {
+    this.$fb.enable()
+  },
   head() {
     return {
       title: 'Tentang Kami',

@@ -80,6 +80,9 @@ import { HOSTNAME } from '~/constant'
 export default {
   name: 'SyaratDanKetentuan',
   components: { AppBreadcrumb },
+  mounted() {
+    this.$fb.enable()
+  },
   head() {
     return {
       title: 'Syarat Dan Ketentuan',

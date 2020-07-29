@@ -85,6 +85,9 @@ export default {
         }
       ]
     }
+  },
+  mounted() {
+    this.$fb.enable()
   }
 }
 </script>

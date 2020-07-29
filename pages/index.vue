@@ -18,10 +18,14 @@
           />
         </div>
       </div>
-      <div class="text-center">
-        <button class="btn focus:outline-none focus:border-white">
+      <div class="text-center mt-4">
+        <nuxt-link
+          to="/properti"
+          aria-label="Temukan Properti Lainnya"
+          class="btn"
+        >
           Temukan Properti Lainnya
-        </button>
+        </nuxt-link>
       </div>
       <div class="text-center">
         <h2 class="text-3xl border-b">
@@ -41,9 +45,13 @@
         </div>
       </div>
       <div class="text-center">
-        <button class="btn focus:outline-none focus:border-white">
+        <nuxt-link
+          to="/artikel"
+          aria-label="Info &amp; Update Lainnya"
+          class="btn"
+        >
           Info &amp; Update Lainnya
-        </button>
+        </nuxt-link>
       </div>
       <div class="text-center">
         <h2 class="text-3xl border-b">
@@ -144,6 +152,9 @@ export default {
         }
       ]
     }
+  },
+  mounted() {
+    this.$fb.enable()
   }
 }
 </script>
@@ -183,6 +194,9 @@ h2 {
   background: transparent;
 }
 .btn {
-  @apply py-4 px-12 rounded-lg shadow-xl bg-blue-700 text-white;
+  @apply py-3 px-8 rounded-lg shadow-xl bg-blue-700 text-white;
+  &:hover {
+    @apply bg-blue-500;
+  }
 }
 </style>

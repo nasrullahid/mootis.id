@@ -80,6 +80,9 @@ import { HOSTNAME } from '~/constant'
 export default {
   name: 'KebijakanPrivasi',
   components: { AppBreadcrumb },
+  mounted() {
+    this.$fb.enable()
+  },
   head() {
     return {
       title: 'Kebijakan Privasi',

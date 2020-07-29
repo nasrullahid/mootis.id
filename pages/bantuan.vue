@@ -11,6 +11,9 @@ import { HOSTNAME } from '~/constant'
 export default {
   name: 'Bantuan',
   components: { AppBreadcrumb },
+  mounted() {
+    this.$fb.enable()
+  },
   head() {
     return {
       title: 'Pertanyaan Yang Sering Diajukan',

@@ -281,6 +281,8 @@ export default {
     }
   },
   mounted() {
+    this.$fb.enable()
+    this.$fb.track('ViewContent')
     const hash = window.location.hash
     if (hash) {
       const element = document.querySelector(hash)
