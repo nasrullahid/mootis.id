@@ -6,7 +6,7 @@
         <div v-for="i in 2" :key="i" class="postProperty">
           <AppBlog
             img="/slide-2.jpg"
-            slug="/artikel"
+            slug="/artikel/test"
             posted-date="2020-07-27T11:00:00.000Z"
             updated-date="2020-07-27T11:00:00.000Z"
             title="Menata Rumah Mungil Dengan Desain Interior Minimalis"

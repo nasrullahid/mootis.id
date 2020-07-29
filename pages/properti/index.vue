@@ -1,7 +1,7 @@
 <template>
   <div class="page-artikel">
     <AppBreadcrumb title="Properti Terbaik Hanya Untuk Anda" />
-    <div class="container mx-auto py-12 px-4">
+    <div class="max-w-4xl mx-auto py-12 px-4">
       <!-- <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-2"
       > -->
