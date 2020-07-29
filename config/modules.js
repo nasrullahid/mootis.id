@@ -30,7 +30,7 @@ export default [
     {
       track: 'PageView',
       pixelId: process.env.PIXEL_FB,
-      disabled: false
+      disabled: true
     }
   ],
 
