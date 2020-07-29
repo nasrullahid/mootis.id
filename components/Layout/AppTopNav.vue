@@ -1,6 +1,6 @@
 <template>
   <section class="headerTopNav">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-4xl mx-auto px-4">
       <div class="flex flex-row items-center">
         <div class="flex items-center justify-start w-1/2">
           <time :datetime="officeTime" class="officeTime">{{
@@ -24,7 +24,7 @@
                 @click="isOpen = !isOpen"
               >
                 <font-awesome-icon :icon="['fas', 'user']" class="icon" />
-                <span>Welcome, Guest</span>
+                <span class="hidden sm:block">Welcome, Guest</span>
               </button>
               <button
                 v-if="isOpen"
@@ -82,17 +82,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .headerTopNav {
   @apply shadow p-1 text-sm;
   background: var(--bg-primary);
   color: var(--text-normal);
 }
 .officeTime {
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: block;
   white-space: nowrap;
 }
 .socialNetworks {
@@ -116,11 +112,6 @@ export default {
 }
 .userAccount {
   @apply mb-0 ml-2 border-l-2 pl-2 border-opacity-25;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: block;
-  white-space: nowrap;
   & span {
     @apply ml-1;
   }

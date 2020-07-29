@@ -59,8 +59,6 @@
                 <app-img
                   :src="`/slide-${i}.jpg`"
                   :alt="`Catalya Gardens Hertasning ${i}`"
-                  :width="70"
-                  :height="70"
                 />
               </div>
               <div class="desc">
