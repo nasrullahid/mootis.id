@@ -11,10 +11,7 @@
           <client-only placeholder="Loading slide">
             <VueSlickCarousel v-bind="slickOptions">
               <div v-for="index in 4" :key="index" class="post__slick">
-                <app-img
-                  :src="`/properti/slide-${index}.jpg`"
-                  class="w-full h-full"
-                />
+                <app-img :src="`/properti/slide-${index}.jpg`" />
               </div>
             </VueSlickCarousel>
           </client-only>
@@ -34,9 +31,11 @@
         </div>
 
         <div class="post__content">
-          <h4 class="post__content__heading">{{ post.headline }}</h4>
+          <h4 v-if="post.headline" class="post__content__heading">
+            {{ post.headline }}
+          </h4>
 
-          <div class="post__content__description">
+          <div v-if="post.description" class="post__content__description">
             <p class="mb-0">{{ post.description }}</p>
           </div>
 
@@ -44,15 +43,14 @@
             <app-video :src="post.video" />
           </div>
 
-          <div class="post__content__fasilitas">
+          <div v-if="post.fasilitas" class="post__content__fasilitas">
             <h3 class="mb-4">Fasilitas yang Anda Dapatkan</h3>
             <ul>
-              <li>One gate system</li>
-              <li>One home one hafidz</li>
+              <li v-for="item in post.fasilitas" :key="item">{{ item }}</li>
             </ul>
           </div>
 
-          <div class="post__content__siteplan">
+          <div v-if="post.sitePlan" class="post__content__siteplan">
             <h3 class="mb-4">Site Plan {{ post.title }}</h3>
             <app-img
               :src="`/properti/${post.sitePlan}`"
@@ -60,7 +58,7 @@
             />
           </div>
 
-          <div class="post__content__typeunit">
+          <div v-if="post.tipeUnit" class="post__content__typeunit">
             <h3 class="mb-4">Tipe Unit &amp; Spesifikasi</h3>
             <div v-for="(item, index) in post.tipeUnit" :key="index">
               <h5 class="m-0">{{ index + 1 }}. {{ item.tipe }}</h5>
@@ -78,13 +76,11 @@
             </div>
           </div>
 
-          <div class="post__content__maps">
+          <div v-if="post.maps" class="post__content__maps">
             <h3 class="mb-4">Lihat Lokasi di Google Maps</h3>
             <figure class="video">
               <div class="embed embed__16/9">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7947.453144478817!2d119.542629!3d-5.147647!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b3a127daa753612!2sAl%20Jazeera%20Residence!5e0!3m2!1sen!2sid!4v1595999628401!5m2!1sen!2sid"
-                ></iframe>
+                <iframe :src="post.maps"></iframe>
               </div>
             </figure>
           </div>
@@ -182,8 +178,6 @@ export default {
     return {
       post: null,
       slickOptions: {
-        arrows: true,
-        dots: true,
         dotsClass: 'slick-dots custom-dot-class',
         infinite: true,
         fade: true,
@@ -196,7 +190,32 @@ export default {
         cssEase: 'linear',
         slidesToShow: 1,
         slidesToScroll: 1,
-        initialSlide: 0
+        initialSlide: 0,
+        swipeToSlide: true,
+        adaptiveHeight: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              arrows: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              arrows: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              dots: true
+            }
+          }
+        ]
       }
     }
   },
@@ -215,6 +234,18 @@ export default {
       updatedDate: new Date(),
       sitePlan: 'siteplan.jpg',
       video: 'https://www.youtube.com/embed/8B9Kz5m9xh8',
+      fasilitas: [
+        'One gate system',
+        'One home one hafidz',
+        'Pagar keliling',
+        'Taman dalam perumahan',
+        'Pos security',
+        'Tanpa bank',
+        'Tanpa akad bathil',
+        'Tanpa riba',
+        'Tanpa denda',
+        'Tanpa sita'
+      ],
       tipeUnit: [
         {
           tipe: 'Tipe 48/60',
@@ -243,6 +274,8 @@ export default {
           ]
         }
       ],
+      maps:
+        'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7947.453144478817!2d119.542629!3d-5.147647!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b3a127daa753612!2sAl%20Jazeera%20Residence!5e0!3m2!1sen!2sid!4v1595999628401!5m2!1sen!2sid',
       slug,
       fullPath
     }
@@ -257,7 +290,7 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 /* purgecss start ignore */
 .banner {
   @apply h-64;
@@ -285,7 +318,7 @@ export default {
     height: 24rem;
     width: 100%;
     & img {
-      @apply object-cover object-center;
+      @apply w-full h-full object-cover object-center;
     }
   }
 
@@ -407,6 +440,30 @@ body {
         filter: brightness(0.9);
       }
     }
+  }
+}
+
+@media (max-width: 640px) {
+  .banner {
+    @apply h-40;
+    &__img {
+      @apply h-40;
+    }
+    & .image-placeholder {
+      height: 15rem;
+    }
+  }
+  .post__slick {
+    height: 10rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .banner {
+    @apply h-24;
+  }
+  .post__slick {
+    height: 10rem;
   }
 }
 
