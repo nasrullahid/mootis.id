@@ -19,6 +19,12 @@ export default {
       property: 'og:image:alt',
       content: process.env.APP_NAME
     },
+    {
+      hid: 'og:site_name',
+      name: 'og:site_name',
+      property: 'og:site_name',
+      content: process.env.APP_NAME
+    },
     { property: 'fb:admins', content: process.env.FB_ADMIN },
     {
       property: 'fb:app_id',
