@@ -1,1 +1,1 @@
-export const HOSTNAME = 'https://property-syariah.nasrullah.id'
+export const HOSTNAME = 'https://mootis.nasrullah.id'
