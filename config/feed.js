@@ -1,3 +1,3 @@
-// import { HOSTNAME } from '../constant'
+// import { env } from '../constant'
 
 export default () => {}

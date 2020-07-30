@@ -7,7 +7,7 @@
 
 <script>
 import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
-import { HOSTNAME } from '~/constant'
+import { env } from '~/constant'
 export default {
   name: 'Login',
   components: { AppBreadcrumb },
@@ -27,67 +27,67 @@ export default {
           hid: 'title',
           name: 'title',
           property: 'title',
-          content: `Login - ${process.env.APP_NAME}`
+          content: `Login - ${env.appName}`
         },
         {
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: `Login - ${process.env.DESCRIPTION}`
+          content: `Login - ${env.description}`
         },
         {
           hid: 'keywords',
           name: 'keywords',
           property: 'keywords',
-          content: `Login - ${process.env.KEYWORDS}`
+          content: `Login - ${env.keywords}`
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: `Login - ${process.env.APP_NAME}`
+          content: `Login - ${env.appName}`
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: `Login - ${process.env.DESCRIPTION}`
+          content: `Login - ${env.description}`
         },
         {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: `${HOSTNAME}/login`
+          content: `${env.hostname}/login`
         },
         {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          content: `${HOSTNAME}${this.imageRequired.src}`
+          content: `${env.hostname}${this.imageRequired.src}`
         },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
           property: 'twitter:title',
-          content: `Login - ${process.env.APP_NAME}`
+          content: `Login - ${env.appName}`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
           property: 'twitter:description',
-          content: `Login - ${process.env.DESCRIPTION}`
+          content: `Login - ${env.description}`
         },
         {
           hid: 'twitter:url',
           name: 'twitter:url',
           property: 'twitter:url',
-          content: `${HOSTNAME}/login`
+          content: `${env.hostname}/login`
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
           property: 'twitter:image',
-          content: `${HOSTNAME}${this.imageRequired.src}`
+          content: `${env.hostname}${this.imageRequired.src}`
         }
       ]
     }

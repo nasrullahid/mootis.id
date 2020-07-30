@@ -1,11 +1,11 @@
-import { HOSTNAME } from '../constant'
+import { env } from '../constant'
 
 export default {
   titleTemplate(title) {
     if (title) {
-      return `${title} - ${process.env.APP_NAME}`
+      return `${title} - ${env.appName}`
     }
-    return process.env.APP_NAME
+    return env.appName
   },
   meta: [
     { charset: 'utf-8' },
@@ -17,30 +17,30 @@ export default {
       hid: 'og:image:alt',
       name: 'og:image:alt',
       property: 'og:image:alt',
-      content: process.env.APP_NAME
+      content: env.appName
     },
     {
       hid: 'og:site_name',
       name: 'og:site_name',
       property: 'og:site_name',
-      content: process.env.APP_NAME
+      content: env.appName
     },
-    { property: 'fb:admins', content: process.env.FB_ADMIN },
+    { property: 'fb:admins', content: env.fbAdminId },
     {
       property: 'fb:app_id',
-      content: process.env.FB_APPID
+      content: env.fbAppId
     },
-    { property: 'fb:pages', content: process.env.FB_PAGE },
+    { property: 'fb:pages', content: env.fbPageId },
     {
       name: 'google-site-verification',
-      content: process.env.GSITE_VERIFICATION
+      content: env.gsiteVerification
     }
   ],
   link: [
     {
       type: 'text/plain',
       rel: 'author',
-      href: `${HOSTNAME}/humans.txt`
+      href: `${env.hostname}/humans.txt`
     },
     {
       rel: 'dns-prefetch',
@@ -59,11 +59,11 @@ export default {
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org/',
         '@type': 'WebSite',
-        name: process.env.APP_NAME,
-        headline: process.env.DESCRIPTION,
-        description: process.env.DESCRIPTION,
-        about: process.env.DESCRIPTION,
-        keywords: process.env.KEYWORDS,
+        name: env.appName,
+        headline: env.description,
+        description: env.description,
+        about: env.description,
+        keywords: env.keywords,
         copyrightYear: new Date().getFullYear(),
         dateCreated: '2020-07-27',
         inLanguage: ['Bahasa Indonesia'],
@@ -72,32 +72,32 @@ export default {
         license: 'https://opensource.org/licenses/MIT',
         image: {
           '@type': 'imageObject',
-          url: `${HOSTNAME}/icon.png`,
+          url: `${env.hostname}/icon.png`,
           width: '2739',
           height: '3102'
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': `${HOSTNAME}`
+          '@id': `${env.hostname}`
         },
         publisher: {
           '@type': 'Organization',
-          name: process.env.APP_NAME,
+          name: env.appName,
           sameAs: 'https://www.facebook.com/nasrullah.web.id',
           logo: {
             '@type': 'imageObject',
-            url: `${HOSTNAME}/icon.png`,
+            url: `${env.hostname}/icon.png`,
             width: '2739',
             height: '3102'
           }
         },
         creator: {
           '@type': 'Person',
-          name: process.env.CREATOR_NAME,
-          alternateName: process.env.CREATOR_ALTERNATE,
+          name: env.creatorName,
+          alternateName: env.creatorAlternate,
           birthDate: '1992-12-30',
           gender: { '@type': 'GenderType', alternateName: 'Male' },
-          url: [`${HOSTNAME}`]
+          url: [`${env.hostname}`]
         }
       })
     }

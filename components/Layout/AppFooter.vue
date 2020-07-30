@@ -77,12 +77,13 @@
 </template>
 
 <script>
+import { env } from '@/constant'
 export default {
   name: 'AppFooter',
   props: {
     appName: {
       type: String,
-      default: process.env.APP_NAME || 'Property Syariah'
+      default: env.appName
     },
     contact: {
       type: Object,

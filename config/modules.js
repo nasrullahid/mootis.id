@@ -1,7 +1,4 @@
-/* eslint-disable import/first */
-require('dotenv').config()
-
-import { HOSTNAME } from '../constant'
+import { env } from '../constant'
 
 export default [
   // https://pwa.nuxtjs.org/
@@ -29,7 +26,7 @@ export default [
     'nuxt-facebook-pixel-module',
     {
       track: 'PageView',
-      pixelId: process.env.FB_PIXEL,
+      pixelId: env.fbPixelId,
       disabled: true
     }
   ],
@@ -41,7 +38,7 @@ export default [
   // [
   //   '@nuxtjs/sentry',
   //   {
-  //     dsn: process.env.SENTRY_DSN,
+  //     dsn: env.sentryDns
   //     sourceMapStyle: 'hidden-source-map'
   //   }
   // ],
@@ -53,7 +50,7 @@ export default [
   [
     '@nuxtjs/google-analytics',
     {
-      id: process.env.GOOGLE_ANALYTICS
+      id: env.googleAnalytics
     }
   ],
 
@@ -72,7 +69,7 @@ export default [
   [
     '@nuxtjs/robots',
     {
-      Sitemap: `${HOSTNAME}/sitemap.xml`
+      Sitemap: `${env.hostname}/sitemap.xml`
     }
   ]
 ]

@@ -1,4 +1,4 @@
-// import { HOSTNAME } from '../constant'
+// import { env } from '../constant'
 // import flattenDeep from '../utils'
 
 export default {}

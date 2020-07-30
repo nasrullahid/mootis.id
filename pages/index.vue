@@ -88,7 +88,7 @@ import AppCarousel from '@/components/Layout/AppCarousel'
 import AppPost from '@/components/AppPost'
 import AppBlog from '@/components/AppBlog'
 
-import { HOSTNAME } from '~/constant'
+import { env } from '~/constant'
 export default {
   components: {
     AppCarousel,
@@ -149,81 +149,81 @@ export default {
   },
   head() {
     return {
-      title: process.env.COMPANY_NAME,
+      title: env.companyName,
       meta: [
         {
           hid: 'title',
           name: 'title',
           property: 'title',
-          content: `${process.env.COMPANY_NAME} - ${process.env.APP_NAME}`
+          content: `${env.companyName} - ${env.appName}`
         },
         {
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: process.env.DESCRIPTION
+          content: env.description
         },
         {
           hid: 'keywords',
           name: 'keywords',
           property: 'keywords',
-          content: process.env.KEYWORDS
+          content: env.keywords
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: `${process.env.COMPANY_NAME} - ${process.env.APP_NAME}`
+          content: `${env.companyName} - ${env.appName}`
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: process.env.DESCRIPTION
+          content: env.description
         },
         {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: HOSTNAME
+          content: env.hostname
         },
         {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          content: `${HOSTNAME}${this.imageRequired.src}`
+          content: `${env.hostname}${this.imageRequired.src}`
         },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
           property: 'twitter:title',
-          content: `${process.env.COMPANY_NAME} - ${process.env.APP_NAME}`
+          content: `${env.companyName} - ${env.appName}`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
           property: 'twitter:description',
-          content: process.env.DESCRIPTION
+          content: env.description
         },
         {
           hid: 'twitter:url',
           name: 'twitter:url',
           property: 'twitter:url',
-          content: HOSTNAME
+          content: env.hostname
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
           property: 'twitter:image',
-          content: `${HOSTNAME}${this.imageRequired.src}`
+          content: `${env.hostname}${this.imageRequired.src}`
         }
       ],
       link: [
         {
           rel: 'alternate',
           type: 'application/rss+xml',
-          HOSTNAME,
-          title: `${process.env.COMPANY_NAME} - ${process.env.APP_NAME}`
+          hostname: env.hostname,
+          title: `${env.companyName} - ${env.appName}`
         }
       ]
     }

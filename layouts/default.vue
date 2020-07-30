@@ -12,13 +12,15 @@
 </template>
 
 <script>
+/* eslint-disable */
 import AppToTop from '@/components/AppToTop'
 import AppSwitchTheme from '@/components/AppSwitchTheme'
 import AppTopNav from '@/components/Layout/AppTopNav'
 import AppHeader from '@/components/Layout/AppHeader'
 import AppFooter from '@/components/Layout/AppFooter'
-
+import { env } from '@/constant'
 const Cookie = process.client ? require('js-cookie') : undefined
+
 export default {
   components: {
     AppToTop,
@@ -62,6 +64,7 @@ export default {
   },
   mounted() {
     this.initColorScheme()
+    console.log(env)
   },
   methods: {
     initColorScheme() {
@@ -88,7 +91,7 @@ export default {
   },
   head() {
     return {
-      title: process.env.COMPANY_NAME,
+      title: env.companyName,
       bodyAttrs: {
         class: this.isDark ? 'dark' : 'light'
       }

@@ -76,7 +76,7 @@
 
 <script>
 import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
-import { HOSTNAME } from '~/constant'
+import { env } from '~/constant'
 export default {
   name: 'SyaratDanKetentuan',
   components: { AppBreadcrumb },
@@ -96,67 +96,67 @@ export default {
           hid: 'title',
           name: 'title',
           property: 'title',
-          content: `Syarat dan Ketentuan - ${process.env.APP_NAME}`
+          content: `Syarat dan Ketentuan - ${env.appName}`
         },
         {
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: `Syarat dan Ketentuan - ${process.env.DESCRIPTION}`
+          content: `Syarat dan Ketentuan - ${env.description}`
         },
         {
           hid: 'keywords',
           name: 'keywords',
           property: 'keywords',
-          content: `Syarat dan Ketentuan - ${process.env.KEYWORDS}`
+          content: `Syarat dan Ketentuan - ${env.keywords}`
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: `Syarat dan Ketentuan - ${process.env.APP_NAME}`
+          content: `Syarat dan Ketentuan - ${env.appName}`
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: `Syarat dan Ketentuan - ${process.env.DESCRIPTION}`
+          content: `Syarat dan Ketentuan - ${env.description}`
         },
         {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: `${HOSTNAME}/persyaratan`
+          content: `${env.hostname}/persyaratan`
         },
         {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          content: `${HOSTNAME}${this.imageRequired.src}`
+          content: `${env.hostname}${this.imageRequired.src}`
         },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
           property: 'twitter:title',
-          content: `Syarat dan Ketentuan - ${process.env.APP_NAME}`
+          content: `Syarat dan Ketentuan - ${env.appName}`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
           property: 'twitter:description',
-          content: `Syarat dan Ketentuan - ${process.env.DESCRIPTION}`
+          content: `Syarat dan Ketentuan - ${env.description}`
         },
         {
           hid: 'twitter:url',
           name: 'twitter:url',
           property: 'twitter:url',
-          content: `${HOSTNAME}/persyaratan`
+          content: `${env.hostname}/persyaratan`
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
           property: 'twitter:image',
-          content: `${HOSTNAME}${this.imageRequired.src}`
+          content: `${env.hostname}${this.imageRequired.src}`
         }
       ]
     }

@@ -1,4 +1,4 @@
-require('dotenv').config()
+import { env } from '../constant'
 
 const ampScript =
   '<script async src="https://cdn.ampproject.org/v0.js"></script>'
@@ -8,7 +8,7 @@ const ampVideoScript =
   '<script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>'
 const ampBoilerplate =
   '<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>'
-const ampAnalytics = `<amp-analytics type="gtag" data-credentials="include"><script type="application/json">{"vars":{"gtag_id":"${process.env.GOOGLE_ANALYTICS}","config":{"${process.env.GOOGLE_ANALYTICS}":{"groups":"default"}}}}</script></amp-analytics>`
+const ampAnalytics = `<amp-analytics type="gtag" data-credentials="include"><script type="application/json">{"vars":{"gtag_id":"${env.googleAnalytics}","config":{"${env.googleAnalytics}":{"groups":"default"}}}}</script></amp-analytics>`
 
 export default (html) => {
   const isHasVideo = html.match(/<video([^>]*)>/gi)

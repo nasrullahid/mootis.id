@@ -1,1 +1,1 @@
-export const HOSTNAME = 'https://mootis.nasrullah.id'
+export { default as env } from './env'
