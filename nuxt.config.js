@@ -1,6 +1,6 @@
-require('dotenv').config()
 import { isDev } from './utils'
-import { head, modules, /*feed, sitemap,*/ pwa, build, hooks } from './config'
+import { head, modules, /* feed, sitemap, */ pwa, build, hooks } from './config'
+require('dotenv').config()
 export default {
   /*
    ** Nuxt rendering mode
@@ -67,7 +67,7 @@ export default {
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     // https://github.com/nuxt-community/dotenv-module#readme
-    '@nuxtjs/dotenv',
+    '@nuxtjs/dotenv'
   ],
 
   /**
