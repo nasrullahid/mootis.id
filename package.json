@@ -1,15 +1,15 @@
 {
-  "name": "property-syariah",
-  "description": "Website property syariah made with nuxtjs",
+  "name": "mootis.id",
+  "description": "Megah Developer Properti Syariah Indonesia (mootis.id) pelopor aplikasi markeing properti dengan konsep penjualan sesuai dengan kaidah syariah Islam",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://github.com/nazcules/property-syariah#readme",
+  "homepage": "https://github.com/nazcules/mootis.id#readme",
   "repository": {
     "type": "git",
-    "url": "git@github.com:nazcules/property-syariah.git"
+    "url": "git@github.com:nazcules/mootis.id.git"
   },
   "bugs": {
-    "url": "https://github.com/nazcules/property-syariah/issues"
+    "url": "https://github.com/nazcules/mootis.id/issues"
   },
   "license": "MIT",
   "scripts": {
