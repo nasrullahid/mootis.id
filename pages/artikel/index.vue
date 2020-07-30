@@ -21,6 +21,7 @@
 <script>
 import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
 import AppBlog from '@/components/AppBlog'
+import { HOSTNAME } from '~/constant'
 export default {
   components: {
     AppBreadcrumb,
@@ -29,8 +30,86 @@ export default {
   data() {
     return {}
   },
+  computed: {
+    imageRequired() {
+      return require('~/assets/img/logo.jpg')
+    }
+  },
   mounted() {
     this.$fb.enable()
+  },
+  head() {
+    return {
+      title: 'Artikel Properti Syariah',
+      meta: [
+        {
+          hid: 'title',
+          name: 'title',
+          property: 'title',
+          content: `Artikel Properti Syariah - ${process.env.APP_NAME}`
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          property: 'description',
+          content: `Artikel Properti Syariah - ${process.env.DESCRIPTION}`
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          property: 'keywords',
+          content: `Artikel Properti Syariah - ${process.env.KEYWORDS}`
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: `Artikel Properti Syariah - ${process.env.APP_NAME}`
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: `Artikel Properti Syariah - ${process.env.DESCRIPTION}`
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          property: 'og:url',
+          content: `${HOSTNAME}/artikel`
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          property: 'og:image',
+          content: `${HOSTNAME}${this.imageRequired.src}`
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          property: 'twitter:title',
+          content: `Artikel Properti Syariah - ${process.env.APP_NAME}`
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          property: 'twitter:description',
+          content: `Artikel Properti Syariah - ${process.env.DESCRIPTION}`
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          property: 'twitter:url',
+          content: `${HOSTNAME}/artikel`
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          property: 'twitter:image',
+          content: `${HOSTNAME}${this.imageRequired.src}`
+        }
+      ]
+    }
   }
 }
 </script>

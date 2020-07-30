@@ -337,7 +337,7 @@ export default {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: `${HOSTNAME}/properti/${this.post.slug}/`
+          content: `${HOSTNAME}/properti/${this.post.slug}`
         },
         {
           hid: 'og:image',
@@ -361,7 +361,7 @@ export default {
           hid: 'twitter:url',
           name: 'twitter:url',
           property: 'twitter:url',
-          content: `${HOSTNAME}/properti/${this.post.slug}/`
+          content: `${HOSTNAME}/properti/${this.post.slug}`
         },
         {
           hid: 'twitter:image',
