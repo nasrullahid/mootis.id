@@ -141,7 +141,7 @@ export default {
   },
   computed: {
     imageRequired() {
-      return require('~/assets/img/properti/slide-2.jpg')
+      return require('~/assets/img/logo.jpg')
     }
   },
   mounted() {
