@@ -1,6 +1,6 @@
 <template>
   <div class="static-page">
-    <AppBreadcrumb title="Syarat dan Ketentuan" />
+    <AppBreadcrumb title="Kebijakan Privasi" />
     <div class="max-w-4xl ml-auto mr-auto py-12 px-4">
       <h3>Apakah Lorem Ipsum itu?</h3>
       <p>
@@ -78,20 +78,85 @@
 import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
 import { HOSTNAME } from '~/constant'
 export default {
-  name: 'SyaratDanKetentuan',
+  name: 'KebijakanPrivasi',
   components: { AppBreadcrumb },
+  computed: {
+    imageRequired() {
+      return require('~/assets/img/logo.jpg')
+    }
+  },
   mounted() {
     this.$fb.enable()
   },
   head() {
     return {
-      title: 'Syarat Dan Ketentuan',
+      title: 'Kebijakan Privasi',
       meta: [
+        {
+          hid: 'title',
+          name: 'title',
+          property: 'title',
+          content: `Kebijakan Privasi - ${process.env.APP_NAME}`
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          property: 'description',
+          content: `Kebijakan Privasi - ${process.env.DESCRIPTION}`
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          property: 'keywords',
+          content: `Kebijakan Privasi - ${process.env.KEYWORDS}`
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: `Kebijakan Privasi - ${process.env.APP_NAME}`
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: `Kebijakan Privasi - ${process.env.DESCRIPTION}`
+        },
         {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: `${HOSTNAME}/persyaratan`
+          content: `${HOSTNAME}/privasi`
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          property: 'og:image',
+          content: `${HOSTNAME}${this.imageRequired.src}`
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          property: 'twitter:title',
+          content: `Kebijakan Privasi - ${process.env.APP_NAME}`
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          property: 'twitter:description',
+          content: `Kebijakan Privasi - ${process.env.DESCRIPTION}`
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          property: 'twitter:url',
+          content: `${HOSTNAME}/privasi`
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          property: 'twitter:image',
+          content: `${HOSTNAME}${this.imageRequired.src}`
         }
       ]
     }

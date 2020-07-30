@@ -1,9 +1,7 @@
 <template>
   <div class="static-page">
-    <AppBreadcrumb title="Tentang Kami" />
+    <AppBreadcrumb title="Syarat dan Ketentuan" />
     <div class="max-w-4xl ml-auto mr-auto py-12 px-4">
-      <app-img src="/slide-1.jpg" alt="Tentang Kami"></app-img>
-
       <h3>Apakah Lorem Ipsum itu?</h3>
       <p>
         Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan
@@ -17,7 +15,6 @@
         Ipsum, dan seiring munculnya perangkat lunak Desktop Publishing seperti
         Aldus PageMaker juga memiliki versi Lorem Ipsum.
       </p>
-
       <h3>Dari mana asalnya?</h3>
       <p>
         Tidak seperti anggapan banyak orang, Lorem Ipsum bukanlah teks-teks yang
@@ -43,12 +40,6 @@
         versi bahasa Inggris yang berasal dari terjemahan tahun 1914 oleh H.
         Rackham.
       </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center">
-        <app-img src="/slide-1.jpg" alt="Tentang Kami" class="team"></app-img>
-        <app-img src="/slide-2.jpg" alt="Tentang Kami" class="team"></app-img>
-        <app-img src="/slide-3.jpg" alt="Tentang Kami" class="team"></app-img>
-        <app-img src="/slide-4.jpg" alt="Tentang Kami" class="team"></app-img>
-      </div>
       <h3>Mengapa kita menggunakannya?</h3>
       <p>
         Sudah merupakan fakta bahwa seorang pembaca akan terpengaruh oleh isi
@@ -87,20 +78,85 @@
 import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
 import { HOSTNAME } from '~/constant'
 export default {
-  name: 'TentangKami',
+  name: 'SyaratDanKetentuan',
   components: { AppBreadcrumb },
+  computed: {
+    imageRequired() {
+      return require('~/assets/img/logo.jpg')
+    }
+  },
   mounted() {
     this.$fb.enable()
   },
   head() {
     return {
-      title: 'Tentang Kami',
+      title: 'Syarat dan Ketentuan',
       meta: [
+        {
+          hid: 'title',
+          name: 'title',
+          property: 'title',
+          content: `Syarat dan Ketentuan - ${process.env.APP_NAME}`
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          property: 'description',
+          content: `Syarat dan Ketentuan - ${process.env.DESCRIPTION}`
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          property: 'keywords',
+          content: `Syarat dan Ketentuan - ${process.env.KEYWORDS}`
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: `Syarat dan Ketentuan - ${process.env.APP_NAME}`
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: `Syarat dan Ketentuan - ${process.env.DESCRIPTION}`
+        },
         {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: `${HOSTNAME}/tentang-kami`
+          content: `${HOSTNAME}/persyaratan`
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          property: 'og:image',
+          content: `${HOSTNAME}${this.imageRequired.src}`
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          property: 'twitter:title',
+          content: `Syarat dan Ketentuan - ${process.env.APP_NAME}`
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          property: 'twitter:description',
+          content: `Syarat dan Ketentuan - ${process.env.DESCRIPTION}`
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          property: 'twitter:url',
+          content: `${HOSTNAME}/persyaratan`
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          property: 'twitter:image',
+          content: `${HOSTNAME}${this.imageRequired.src}`
         }
       ]
     }
@@ -109,8 +165,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.team {
-  @apply shadow border-2 m-4 rounded-lg;
+.content {
+  @apply flex flex-row items-center justify-between;
 }
 p {
   text-align: justify;
