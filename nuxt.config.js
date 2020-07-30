@@ -1,3 +1,4 @@
+require('dotenv').config()
 import { isDev } from './utils'
 import { head, modules, /*feed, sitemap,*/ pwa, build, hooks } from './config'
 export default {
@@ -42,7 +43,6 @@ export default {
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
-    // Doc: https://github.com/surmon-china/vue-awesome-swiper#readme
     { src: '@/plugins/components.ssr', mode: 'client', ssr: false },
     // { src: '@/plugins/components.ssr', ssr: false },
     '@/plugins/vue-lazyload',
@@ -65,7 +65,9 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
+    // https://github.com/nuxt-community/dotenv-module#readme
+    '@nuxtjs/dotenv',
   ],
 
   /**
