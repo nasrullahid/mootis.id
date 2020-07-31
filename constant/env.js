@@ -7,7 +7,7 @@ export const COMPANY_NAME = 'Megah Developer Properti Syariah Indonesia'
 export const DESCRIPTION =
   'Megah Developer Properti Syariah Indonesia (mootis.id) pelopor aplikasi markeing properti dengan konsep penjualan sesuai dengan kaidah syariah Islam'
 export const KEYWORDS =
-  'mootis properti syariah tanpa bank tanpa denda tanpa riba tanpa sita tanpa akad bathil properti syariah'
+  'mootis, properti syariah, tanpa bank, tanpa denda, tanpa riba, tanpa sita, tanpa akad bathil, properti syariah'
 export const CREATOR_NAME = 'Nasrullah'
 export const CREATOR_ALTERNATE = 'nazcules'
 
