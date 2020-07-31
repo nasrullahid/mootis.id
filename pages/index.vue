@@ -88,7 +88,13 @@ import AppCarousel from '@/components/Layout/AppCarousel'
 import AppPost from '@/components/AppPost'
 import AppBlog from '@/components/AppBlog'
 
-import { env } from '~/constant'
+import {
+  HOSTNAME,
+  APP_NAME,
+  COMPANY_NAME,
+  DESCRIPTION,
+  KEYWORDS
+} from '~/constant'
 export default {
   components: {
     AppCarousel,
@@ -149,81 +155,81 @@ export default {
   },
   head() {
     return {
-      title: env.companyName,
+      title: COMPANY_NAME,
       meta: [
         {
           hid: 'title',
           name: 'title',
           property: 'title',
-          content: `${env.companyName} - ${env.appName}`
+          content: `${COMPANY_NAME} - ${APP_NAME}`
         },
         {
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: env.description
+          content: DESCRIPTION
         },
         {
           hid: 'keywords',
           name: 'keywords',
           property: 'keywords',
-          content: env.keywords
+          content: KEYWORDS
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: `${env.companyName} - ${env.appName}`
+          content: `${COMPANY_NAME} - ${APP_NAME}`
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: env.description
+          content: DESCRIPTION
         },
         {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: env.hostname
+          content: HOSTNAME
         },
         {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          content: `${env.hostname}${this.imageRequired.src}`
+          content: `${HOSTNAME}${this.imageRequired.src}`
         },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
           property: 'twitter:title',
-          content: `${env.companyName} - ${env.appName}`
+          content: `${COMPANY_NAME} - ${APP_NAME}`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
           property: 'twitter:description',
-          content: env.description
+          content: DESCRIPTION
         },
         {
           hid: 'twitter:url',
           name: 'twitter:url',
           property: 'twitter:url',
-          content: env.hostname
+          content: HOSTNAME
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
           property: 'twitter:image',
-          content: `${env.hostname}${this.imageRequired.src}`
+          content: `${HOSTNAME}${this.imageRequired.src}`
         }
       ],
       link: [
         {
           rel: 'alternate',
           type: 'application/rss+xml',
-          hostname: env.hostname,
-          title: `${env.companyName} - ${env.appName}`
+          hostname: HOSTNAME,
+          title: `${COMPANY_NAME} - ${APP_NAME}`
         }
       ]
     }

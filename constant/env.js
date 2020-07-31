@@ -1,30 +1,29 @@
 require('dotenv').config()
-export default {
-  // Company
-  hostname: 'https://mootis.nasrullah.id',
-  appName: 'MOOTIS.ID',
-  companyName: 'Megah Developer Properti Syariah Indonesia',
-  description:
-    'Megah Developer Properti Syariah Indonesia (mootis.id) pelopor aplikasi markeing properti dengan konsep penjualan sesuai dengan kaidah syariah Islam',
-  keywords:
-    'mootis, properti, syariah, tanpa bank, tanpa denda, tanpa riba, tanpa sita, tanpa akad bathil, properti syariah',
-  creatorName: 'Nasrullah',
-  creatorAlternate: 'nazcules',
 
-  // backend (API)
-  baseUrl: process.env.BASE_URL,
+// Company
+export const HOSTNAME = 'https=//mootis.nasrullah.id'
+export const APP_NAME = 'MOOTIS.ID'
+export const COMPANY_NAME = 'Megah Developer Properti Syariah Indonesia'
+export const DESCRIPTION =
+  'Megah Developer Properti Syariah Indonesia (mootis.id) pelopor aplikasi markeing properti dengan konsep penjualan sesuai dengan kaidah syariah Islam'
+export const KEYWORDS =
+  'mootis properti syariah tanpa bank tanpa denda tanpa riba tanpa sita tanpa akad bathil properti syariah'
+export const CREATOR_NAME = 'Nasrullah'
+export const CREATOR_ALTERNATE = 'nazcules'
 
-  // Google
-  googleAnalytics: 'UA-85283525-3',
-  gsiteVerification: '4MePSYJQJNLm6NzDdIoiY8fctFdyloVjPdgec1TSSeM',
+// backend (API)
+export const BASE_URL = process.env.BASE_URL
 
-  // Twitter
-  twitterSite: '@mootis.id',
-  twitterCreator: '@nasrullahID',
+// Google
+export const GOOGLE_ANALYTIC = 'UA-85283525-3'
+export const GSITE_VERIFICATION = '4MePSYJQJNLm6NzDdIoiY8fctFdyloVjPdgec1TSSeM'
 
-  // Open Graph (Facebook)
-  fbPixelId: '330609454291424',
-  fbAdminId: '100000309115621',
-  fbAppId: '962454547510889',
-  fbPageId: '1148586411880482'
-}
+// Twitter
+export const TWITTER_SITE = '@mootis.id'
+export const TWITTER_CREATOR = '@nasrullahID'
+
+// Open Graph (Facebook)
+export const FB_PIXEL_ID = '330609454291424'
+export const FB_ADMIN_ID = '100000309115621'
+export const FB_APP_ID = '962454547510889'
+export const FB_PAGE_ID = '1148586411880482'

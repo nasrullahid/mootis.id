@@ -27,7 +27,7 @@
 <script>
 import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
 import AppPost from '@/components/AppPost'
-import { env } from '~/constant'
+import { HOSTNAME, COMPANY_NAME, KEYWORDS } from '~/constant'
 export default {
   components: {
     AppBreadcrumb,
@@ -109,13 +109,13 @@ export default {
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: `Katalog properti syariah terbaik hanya untuk Anda dari ${env.companyName}`
+          content: `Katalog properti syariah terbaik hanya untuk Anda dari ${COMPANY_NAME}`
         },
         {
           hid: 'keywords',
           name: 'keywords',
           property: 'keywords',
-          content: env.keywords
+          content: KEYWORDS
         },
         {
           hid: 'og:title',
@@ -127,19 +127,19 @@ export default {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: `Katalog properti syariah terbaik hanya untuk Anda dari ${env.companyName}`
+          content: `Katalog properti syariah terbaik hanya untuk Anda dari ${COMPANY_NAME}`
         },
         {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: `${env.hostname}/properti`
+          content: `${HOSTNAME}/properti`
         },
         {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          content: `${env.hostname}${this.imageRequired.src}`
+          content: `${HOSTNAME}${this.imageRequired.src}`
         },
         {
           hid: 'twitter:title',
@@ -151,19 +151,19 @@ export default {
           hid: 'twitter:description',
           name: 'twitter:description',
           property: 'twitter:description',
-          content: `Katalog properti syariah terbaik hanya untuk Anda dari ${env.companyName}`
+          content: `Katalog properti syariah terbaik hanya untuk Anda dari ${COMPANY_NAME}`
         },
         {
           hid: 'twitter:url',
           name: 'twitter:url',
           property: 'twitter:url',
-          content: `${env.hostname}/properti`
+          content: `${HOSTNAME}/properti`
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
           property: 'twitter:image',
-          content: `${env.hostname}${this.imageRequired.src}`
+          content: `${HOSTNAME}${this.imageRequired.src}`
         }
       ]
     }

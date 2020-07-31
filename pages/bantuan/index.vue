@@ -7,7 +7,7 @@
 
 <script>
 import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
-import { env } from '~/constant'
+import { HOSTNAME, APP_NAME, DESCRIPTION, KEYWORDS } from '~/constant'
 export default {
   name: 'Bantuan',
   components: { AppBreadcrumb },
@@ -27,67 +27,67 @@ export default {
           hid: 'title',
           name: 'title',
           property: 'title',
-          content: `Pertanyaan Yang Sering DIajukan - ${env.appName}`
+          content: `Pertanyaan Yang Sering DIajukan - ${APP_NAME}`
         },
         {
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: `Pertanyaan Yang Sering DIajukan - ${env.description}`
+          content: `Pertanyaan Yang Sering DIajukan - ${DESCRIPTION}`
         },
         {
           hid: 'keywords',
           name: 'keywords',
           property: 'keywords',
-          content: `Pertanyaan Yang Sering DIajukan - ${env.keywords}`
+          content: `Pertanyaan Yang Sering DIajukan - ${KEYWORDS}`
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: `Pertanyaan Yang Sering DIajukan - ${env.appName}`
+          content: `Pertanyaan Yang Sering DIajukan - ${APP_NAME}`
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: `Pertanyaan Yang Sering DIajukan - ${env.description}`
+          content: `Pertanyaan Yang Sering DIajukan - ${DESCRIPTION}`
         },
         {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: `${env.hostname}/bantuan`
+          content: `${HOSTNAME}/bantuan`
         },
         {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          content: `${env.hostname}${this.imageRequired.src}`
+          content: `${HOSTNAME}${this.imageRequired.src}`
         },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
           property: 'twitter:title',
-          content: `Pertanyaan Yang Sering DIajukan - ${env.appName}`
+          content: `Pertanyaan Yang Sering DIajukan - ${APP_NAME}`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
           property: 'twitter:description',
-          content: `Pertanyaan Yang Sering DIajukan - ${env.description}`
+          content: `Pertanyaan Yang Sering DIajukan - ${DESCRIPTION}`
         },
         {
           hid: 'twitter:url',
           name: 'twitter:url',
           property: 'twitter:url',
-          content: `${env.hostname}/bantuan`
+          content: `${HOSTNAME}/bantuan`
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
           property: 'twitter:image',
-          content: `${env.hostname}${this.imageRequired.src}`
+          content: `${HOSTNAME}${this.imageRequired.src}`
         }
       ]
     }

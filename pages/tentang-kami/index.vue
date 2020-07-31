@@ -85,7 +85,7 @@
 
 <script>
 import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
-import { env } from '~/constant'
+import { HOSTNAME, APP_NAME, DESCRIPTION, KEYWORDS } from '~/constant'
 export default {
   name: 'TentangKami',
   components: { AppBreadcrumb },
@@ -105,67 +105,67 @@ export default {
           hid: 'title',
           name: 'title',
           property: 'title',
-          content: `Tentang Kami - ${env.appName}`
+          content: `Tentang Kami - ${APP_NAME}`
         },
         {
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: `Tentang Kami - ${env.description}`
+          content: `Tentang Kami - ${DESCRIPTION}`
         },
         {
           hid: 'keywords',
           name: 'keywords',
           property: 'keywords',
-          content: `Tentang Kami - ${env.keywords}`
+          content: `Tentang Kami - ${KEYWORDS}`
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: `Tentang Kami - ${env.appName}`
+          content: `Tentang Kami - ${APP_NAME}`
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: `Tentang Kami - ${env.description}`
+          content: `Tentang Kami - ${DESCRIPTION}`
         },
         {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: `${env.hostname}/tentang-kami`
+          content: `${HOSTNAME}/tentang-kami`
         },
         {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          content: `${env.hostname}${this.imageRequired.src}`
+          content: `${HOSTNAME}${this.imageRequired.src}`
         },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
           property: 'twitter:title',
-          content: `Tentang Kami - ${env.appName}`
+          content: `Tentang Kami - ${APP_NAME}`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
           property: 'twitter:description',
-          content: `Tentang Kami - ${env.description}`
+          content: `Tentang Kami - ${DESCRIPTION}`
         },
         {
           hid: 'twitter:url',
           name: 'twitter:url',
           property: 'twitter:url',
-          content: `${env.hostname}/tentang-kami`
+          content: `${HOSTNAME}/tentang-kami`
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
           property: 'twitter:image',
-          content: `${env.hostname}${this.imageRequired.src}`
+          content: `${HOSTNAME}${this.imageRequired.src}`
         }
       ]
     }

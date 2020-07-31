@@ -77,13 +77,13 @@
 </template>
 
 <script>
-import { env } from '@/constant'
+import { APP_NAME } from '@/constant'
 export default {
   name: 'AppFooter',
   props: {
     appName: {
       type: String,
-      default: env.appName
+      default: APP_NAME
     },
     contact: {
       type: Object,

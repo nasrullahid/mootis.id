@@ -174,7 +174,7 @@
 
 <script>
 import { formatDate } from '~/mixins'
-import { env } from '~/constant'
+import { HOSTNAME, APP_NAME } from '~/constant'
 export default {
   mixins: [formatDate],
   data() {
@@ -229,7 +229,7 @@ export default {
   },
   created() {
     const slug = this.$route && this.$route.params && this.$route.params.slug
-    const fullPath = `${env.hostname}/properi/${slug}`
+    const fullPath = `${HOSTNAME}/properi/${slug}`
 
     this.post = {
       banner: 'slide-1.jpg',
@@ -337,13 +337,13 @@ export default {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: `${env.hostname}/properti/${this.post.slug}`
+          content: `${HOSTNAME}/properti/${this.post.slug}`
         },
         {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          content: `${env.hostname}${this.imageRequired.src}`
+          content: `${HOSTNAME}${this.imageRequired.src}`
         },
         {
           hid: 'twitter:title',
@@ -361,21 +361,21 @@ export default {
           hid: 'twitter:url',
           name: 'twitter:url',
           property: 'twitter:url',
-          content: `${env.hostname}/properti/${this.post.slug}`
+          content: `${HOSTNAME}/properti/${this.post.slug}`
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
           property: 'twitter:image',
-          content: `${env.hostname}${this.imageRequired.src}`
+          content: `${HOSTNAME}${this.imageRequired.src}`
         }
       ],
       link: [
         {
           rel: 'alternate',
           type: 'application/rss+xml',
-          hostname: env.hostname,
-          title: `${this.post.title} - ${env.appName}`
+          hostname: HOSTNAME,
+          title: `${this.post.title} - ${APP_NAME}`
         }
       ]
     }

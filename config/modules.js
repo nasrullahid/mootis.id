@@ -1,4 +1,4 @@
-import { env } from '../constant'
+import { HOSTNAME, GOOGLE_ANALYTIC, FB_PIXEL_ID } from '../constant'
 
 export default [
   // https://pwa.nuxtjs.org/
@@ -26,7 +26,7 @@ export default [
     'nuxt-facebook-pixel-module',
     {
       track: 'PageView',
-      pixelId: env.fbPixelId,
+      pixelId: FB_PIXEL_ID,
       disabled: true
     }
   ],
@@ -50,7 +50,7 @@ export default [
   [
     '@nuxtjs/google-analytics',
     {
-      id: env.googleAnalytics
+      id: GOOGLE_ANALYTIC
     }
   ],
 
@@ -69,7 +69,7 @@ export default [
   [
     '@nuxtjs/robots',
     {
-      Sitemap: `${env.hostname}/sitemap.xml`
+      Sitemap: `${HOSTNAME}/sitemap.xml`
     }
   ]
 ]

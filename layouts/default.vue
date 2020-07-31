@@ -18,7 +18,13 @@ import AppSwitchTheme from '@/components/AppSwitchTheme'
 import AppTopNav from '@/components/Layout/AppTopNav'
 import AppHeader from '@/components/Layout/AppHeader'
 import AppFooter from '@/components/Layout/AppFooter'
-import { env } from '@/constant'
+import {
+  HOSTNAME,
+  APP_NAME,
+  COMPANY_NAME,
+  DESCRIPTION,
+  KEYWORDS
+} from '@/constant'
 const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
@@ -64,7 +70,6 @@ export default {
   },
   mounted() {
     this.initColorScheme()
-    console.log(env)
   },
   methods: {
     initColorScheme() {
@@ -91,7 +96,7 @@ export default {
   },
   head() {
     return {
-      title: env.companyName,
+      title: COMPANY_NAME,
       bodyAttrs: {
         class: this.isDark ? 'dark' : 'light'
       }

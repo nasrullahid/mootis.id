@@ -76,7 +76,7 @@
 
 <script>
 import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
-import { env } from '~/constant'
+import { HOSTNAME, APP_NAME, DESCRIPTION, KEYWORDS } from '~/constant'
 export default {
   name: 'KebijakanPrivasi',
   components: { AppBreadcrumb },
@@ -96,67 +96,67 @@ export default {
           hid: 'title',
           name: 'title',
           property: 'title',
-          content: `Kebijakan Privasi - ${env.appName}`
+          content: `Kebijakan Privasi - ${APP_NAME}`
         },
         {
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: `Kebijakan Privasi - ${env.description}`
+          content: `Kebijakan Privasi - ${DESCRIPTION}`
         },
         {
           hid: 'keywords',
           name: 'keywords',
           property: 'keywords',
-          content: `Kebijakan Privasi - ${env.keywords}`
+          content: `Kebijakan Privasi - ${KEYWORDS}`
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: `Kebijakan Privasi - ${env.appName}`
+          content: `Kebijakan Privasi - ${APP_NAME}`
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: `Kebijakan Privasi - ${env.description}`
+          content: `Kebijakan Privasi - ${DESCRIPTION}`
         },
         {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: `${env.hostname}/privasi`
+          content: `${HOSTNAME}/privasi`
         },
         {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          content: `${env.hostname}${this.imageRequired.src}`
+          content: `${HOSTNAME}${this.imageRequired.src}`
         },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
           property: 'twitter:title',
-          content: `Kebijakan Privasi - ${env.appName}`
+          content: `Kebijakan Privasi - ${APP_NAME}`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
           property: 'twitter:description',
-          content: `Kebijakan Privasi - ${env.description}`
+          content: `Kebijakan Privasi - ${DESCRIPTION}`
         },
         {
           hid: 'twitter:url',
           name: 'twitter:url',
           property: 'twitter:url',
-          content: `${env.hostname}/privasi`
+          content: `${HOSTNAME}/privasi`
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
           property: 'twitter:image',
-          content: `${env.hostname}${this.imageRequired.src}`
+          content: `${HOSTNAME}${this.imageRequired.src}`
         }
       ]
     }

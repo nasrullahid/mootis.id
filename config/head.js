@@ -1,12 +1,18 @@
-import { env } from '../constant'
+import {
+  HOSTNAME,
+  APP_NAME,
+  DESCRIPTION,
+  KEYWORDS,
+  CREATOR_NAME,
+  CREATOR_ALTERNATE,
+  GSITE_VERIFICATION,
+  FB_ADMIN_ID,
+  FB_APP_ID,
+  FB_PAGE_ID
+} from '../constant/index'
 
 export default {
-  titleTemplate(title) {
-    if (title) {
-      return `${title} - ${env.appName}`
-    }
-    return env.appName
-  },
+  titleTemplate: `%s - ${APP_NAME}`,
   meta: [
     { charset: 'utf-8' },
     {
@@ -17,30 +23,30 @@ export default {
       hid: 'og:image:alt',
       name: 'og:image:alt',
       property: 'og:image:alt',
-      content: env.appName
+      content: APP_NAME
     },
     {
       hid: 'og:site_name',
       name: 'og:site_name',
       property: 'og:site_name',
-      content: env.appName
+      content: APP_NAME
     },
-    { property: 'fb:admins', content: env.fbAdminId },
+    { property: 'fb:admins', content: FB_ADMIN_ID },
     {
       property: 'fb:app_id',
-      content: env.fbAppId
+      content: FB_APP_ID
     },
-    { property: 'fb:pages', content: env.fbPageId },
+    { property: 'fb:pages', content: FB_PAGE_ID },
     {
       name: 'google-site-verification',
-      content: env.gsiteVerification
+      content: GSITE_VERIFICATION
     }
   ],
   link: [
     {
       type: 'text/plain',
       rel: 'author',
-      href: `${env.hostname}/humans.txt`
+      href: `${HOSTNAME}/humans.txt`
     },
     {
       rel: 'dns-prefetch',
@@ -59,11 +65,11 @@ export default {
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org/',
         '@type': 'WebSite',
-        name: env.appName,
-        headline: env.description,
-        description: env.description,
-        about: env.description,
-        keywords: env.keywords,
+        name: APP_NAME,
+        headline: DESCRIPTION,
+        description: DESCRIPTION,
+        about: DESCRIPTION,
+        keywords: KEYWORDS,
         copyrightYear: new Date().getFullYear(),
         dateCreated: '2020-07-27',
         inLanguage: ['Bahasa Indonesia'],
@@ -72,32 +78,32 @@ export default {
         license: 'https://opensource.org/licenses/MIT',
         image: {
           '@type': 'imageObject',
-          url: `${env.hostname}/icon.png`,
+          url: `${HOSTNAME}/icon.png`,
           width: '2739',
           height: '3102'
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': `${env.hostname}`
+          '@id': `${HOSTNAME}`
         },
         publisher: {
           '@type': 'Organization',
-          name: env.appName,
+          name: APP_NAME,
           sameAs: 'https://www.facebook.com/nasrullah.web.id',
           logo: {
             '@type': 'imageObject',
-            url: `${env.hostname}/icon.png`,
+            url: `${HOSTNAME}/icon.png`,
             width: '2739',
             height: '3102'
           }
         },
         creator: {
           '@type': 'Person',
-          name: env.creatorName,
-          alternateName: env.creatorAlternate,
+          name: CREATOR_NAME,
+          alternateName: CREATOR_ALTERNATE,
           birthDate: '1992-12-30',
           gender: { '@type': 'GenderType', alternateName: 'Male' },
-          url: [`${env.hostname}`]
+          url: [`${HOSTNAME}`]
         }
       })
     }

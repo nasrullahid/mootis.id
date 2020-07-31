@@ -1,23 +1,30 @@
-import { env } from '../constant'
+import {
+  HOSTNAME,
+  APP_NAME,
+  COMPANY_NAME,
+  DESCRIPTION,
+  TWITTER_CREATOR,
+  TWITTER_SITE
+} from '../constant'
 
 export default {
   // https://pwa.nuxtjs.org/modules/meta.html
   meta: {
-    name: env.appName,
-    description: env.description,
+    name: APP_NAME,
+    description: DESCRIPTION,
     lang: 'id',
-    ogHost: env.hostname,
+    ogHost: HOSTNAME,
     twitterCard: 'summary_large_image',
-    twitterSite: env.twitterSite,
-    twitterCreator: env.twitterCreator
+    twitterSite: TWITTER_SITE,
+    twitterCreator: TWITTER_CREATOR
   },
 
   // https://pwa.nuxtjs.org/modules/manifest.html
   manifest: {
-    name: env.companyName,
-    short_name: env.appName,
+    name: COMPANY_NAME,
+    short_name: APP_NAME,
     start_url: '/?utm_source=homescreen',
-    description: env.description,
+    description: DESCRIPTION,
     lang: 'id',
     background_color: '#edf2f7',
     theme_color: '#2a4365'
