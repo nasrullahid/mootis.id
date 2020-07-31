@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 // Company
-export const HOSTNAME = 'https=//mootis.nasrullah.id'
+export const HOSTNAME = 'https://mootis.nasrullah.id'
 export const APP_NAME = 'MOOTIS.ID'
 export const COMPANY_NAME = 'Megah Developer Properti Syariah Indonesia'
 export const DESCRIPTION =
