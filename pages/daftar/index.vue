@@ -1,19 +1,19 @@
 <template>
   <div class="static-page">
-    <AppBreadcrumb title="Daftar Jadi Marketing" />
+    <AppBreadcrumb title="Pendaftaran Member" />
     <div class="max-w-4xl ml-auto mr-auto py-12 px-4 h-screen"></div>
   </div>
 </template>
 
 <script>
 import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
-import { HOSTNAME, APP_NAME, DESCRIPTION, KEYWORDS } from '~/constant'
+import { HOSTNAME, APP_NAME, KEYWORDS } from '@/constant'
 export default {
   name: 'Daftar',
   components: { AppBreadcrumb },
   computed: {
     imageRequired() {
-      return require('~/assets/img/logo.jpg')
+      return require('@/assets/img/logo.jpg')
     }
   },
   mounted() {
@@ -21,37 +21,37 @@ export default {
   },
   head() {
     return {
-      title: 'Daftar',
+      title: 'Pendaftaran Member',
       meta: [
         {
           hid: 'title',
           name: 'title',
           property: 'title',
-          content: `Daftar - ${APP_NAME}`
+          content: 'Pendaftaran Member'
         },
         {
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: `Daftar - ${DESCRIPTION}`
+          content: `Jadilah bagian dari ${APP_NAME}, daftar sekarang`
         },
         {
           hid: 'keywords',
           name: 'keywords',
           property: 'keywords',
-          content: `Daftar - ${KEYWORDS}`
+          content: `Daftar Member ${APP_NAME}, ${KEYWORDS}`
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: `Daftar - ${APP_NAME}`
+          content: 'Pendaftaran Member'
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: `Daftar - ${DESCRIPTION}`
+          content: `Jadilah bagian dari ${APP_NAME}, daftar sekarang`
         },
         {
           hid: 'og:url',
@@ -69,13 +69,13 @@ export default {
           hid: 'twitter:title',
           name: 'twitter:title',
           property: 'twitter:title',
-          content: `Daftar - ${APP_NAME}`
+          content: 'Pendaftaran Member'
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
           property: 'twitter:description',
-          content: `Daftar - ${DESCRIPTION}`
+          content: `Jadilah bagian dari ${APP_NAME}, daftar sekarang`
         },
         {
           hid: 'twitter:url',

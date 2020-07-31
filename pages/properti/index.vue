@@ -27,7 +27,7 @@
 <script>
 import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
 import AppPost from '@/components/AppPost'
-import { HOSTNAME, COMPANY_NAME, KEYWORDS } from '~/constant'
+import { HOSTNAME, KEYWORDS, APP_NAME } from '@/constant'
 export default {
   components: {
     AppBreadcrumb,
@@ -89,7 +89,7 @@ export default {
   },
   computed: {
     imageRequired() {
-      return require('~/assets/img/logo.jpg')
+      return require('@/assets/img/logo.jpg')
     }
   },
   mounted() {
@@ -109,13 +109,13 @@ export default {
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: `Katalog properti syariah terbaik hanya untuk Anda dari ${COMPANY_NAME}`
+          content: `Katalog properti syariah terbaik hanya untuk Anda dari ${APP_NAME}`
         },
         {
           hid: 'keywords',
           name: 'keywords',
           property: 'keywords',
-          content: KEYWORDS
+          content: `katalog properti, ${KEYWORDS}`
         },
         {
           hid: 'og:title',
@@ -127,7 +127,7 @@ export default {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: `Katalog properti syariah terbaik hanya untuk Anda dari ${COMPANY_NAME}`
+          content: `Katalog properti syariah terbaik hanya untuk Anda dari ${APP_NAME}`
         },
         {
           hid: 'og:url',
@@ -151,7 +151,7 @@ export default {
           hid: 'twitter:description',
           name: 'twitter:description',
           property: 'twitter:description',
-          content: `Katalog properti syariah terbaik hanya untuk Anda dari ${COMPANY_NAME}`
+          content: `Katalog properti syariah terbaik hanya untuk Anda dari ${APP_NAME}`
         },
         {
           hid: 'twitter:url',

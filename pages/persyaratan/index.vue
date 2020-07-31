@@ -76,13 +76,13 @@
 
 <script>
 import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
-import { HOSTNAME, APP_NAME, DESCRIPTION, KEYWORDS } from '~/constant'
+import { HOSTNAME, APP_NAME, KEYWORDS } from '@/constant'
 export default {
   name: 'SyaratDanKetentuan',
   components: { AppBreadcrumb },
   computed: {
     imageRequired() {
-      return require('~/assets/img/logo.jpg')
+      return require('@/assets/img/logo.jpg')
     }
   },
   mounted() {
@@ -96,31 +96,31 @@ export default {
           hid: 'title',
           name: 'title',
           property: 'title',
-          content: `Syarat dan Ketentuan - ${APP_NAME}`
+          content: 'Syarat dan Ketentuan'
         },
         {
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: `Syarat dan Ketentuan - ${DESCRIPTION}`
+          content: `Syarat dan ketentuan layanan ${APP_NAME}`
         },
         {
           hid: 'keywords',
           name: 'keywords',
           property: 'keywords',
-          content: `Syarat dan Ketentuan - ${KEYWORDS}`
+          content: `Syarat dan ketentuan, ${KEYWORDS}`
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: `Syarat dan Ketentuan - ${APP_NAME}`
+          content: 'Syarat dan Ketentuan'
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: `Syarat dan Ketentuan - ${DESCRIPTION}`
+          content: `Syarat dan ketentuan layanan ${APP_NAME}`
         },
         {
           hid: 'og:url',
@@ -138,13 +138,13 @@ export default {
           hid: 'twitter:title',
           name: 'twitter:title',
           property: 'twitter:title',
-          content: `Syarat dan Ketentuan - ${APP_NAME}`
+          content: 'Syarat dan Ketentuan'
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
           property: 'twitter:description',
-          content: `Syarat dan Ketentuan - ${DESCRIPTION}`
+          content: `Syarat dan ketentuan layanan ${APP_NAME}`
         },
         {
           hid: 'twitter:url',

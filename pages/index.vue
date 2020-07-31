@@ -94,7 +94,7 @@ import {
   COMPANY_NAME,
   DESCRIPTION,
   KEYWORDS
-} from '~/constant'
+} from '@/constant'
 export default {
   components: {
     AppCarousel,
@@ -147,7 +147,7 @@ export default {
   },
   computed: {
     imageRequired() {
-      return require('~/assets/img/logo.jpg')
+      return require('@/assets/img/logo.jpg')
     }
   },
   mounted() {

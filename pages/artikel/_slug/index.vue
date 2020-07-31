@@ -104,8 +104,8 @@
 
 <script>
 import readingTime from 'reading-time'
-import { formatDate } from '~/mixins'
-import { HOSTNAME, APP_NAME } from '~/constant'
+import { formatDate } from '@/mixins'
+import { HOSTNAME } from '@/constant'
 export default {
   mixins: [formatDate],
   data() {
@@ -115,7 +115,7 @@ export default {
   },
   computed: {
     imageRequired() {
-      return require(`~/assets/img/artikel/${this.blog.banner}`)
+      return require(`@/assets/img/artikel/${this.blog.banner}`)
     }
   },
   created() {
@@ -224,7 +224,7 @@ export default {
           rel: 'alternate',
           type: 'application/rss+xml',
           hostname: HOSTNAME,
-          title: `${this.blog.title} - ${APP_NAME}`
+          title: this.blog.title
         }
       ]
     }

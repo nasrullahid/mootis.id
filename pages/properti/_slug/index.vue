@@ -173,8 +173,8 @@
 </template>
 
 <script>
-import { formatDate } from '~/mixins'
-import { HOSTNAME, APP_NAME } from '~/constant'
+import { formatDate } from '@/mixins'
+import { HOSTNAME, APP_NAME } from '@/constant'
 export default {
   mixins: [formatDate],
   data() {
@@ -224,7 +224,7 @@ export default {
   },
   computed: {
     imageRequired() {
-      return require(`~/assets/img/properti/${this.post.banner}`)
+      return require(`@/assets/img/properti/${this.post.banner}`)
     }
   },
   created() {

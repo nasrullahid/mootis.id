@@ -85,13 +85,13 @@
 
 <script>
 import AppBreadcrumb from '@/components/Layout/AppBreadcrumb'
-import { HOSTNAME, APP_NAME, DESCRIPTION, KEYWORDS } from '~/constant'
+import { HOSTNAME, APP_NAME, KEYWORDS } from '@/constant'
 export default {
   name: 'TentangKami',
   components: { AppBreadcrumb },
   computed: {
     imageRequired() {
-      return require('~/assets/img/logo.jpg')
+      return require('@/assets/img/logo.jpg')
     }
   },
   mounted() {
@@ -105,31 +105,31 @@ export default {
           hid: 'title',
           name: 'title',
           property: 'title',
-          content: `Tentang Kami - ${APP_NAME}`
+          content: 'Tentang Kami'
         },
         {
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: `Tentang Kami - ${DESCRIPTION}`
+          content: `Tentang Kami ${APP_NAME}`
         },
         {
           hid: 'keywords',
           name: 'keywords',
           property: 'keywords',
-          content: `Tentang Kami - ${KEYWORDS}`
+          content: `Tentang Kami, ${KEYWORDS}`
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: `Tentang Kami - ${APP_NAME}`
+          content: 'Tentang Kami'
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: `Tentang Kami - ${DESCRIPTION}`
+          content: `Tentang Kami ${APP_NAME}`
         },
         {
           hid: 'og:url',
@@ -147,13 +147,13 @@ export default {
           hid: 'twitter:title',
           name: 'twitter:title',
           property: 'twitter:title',
-          content: `Tentang Kami - ${APP_NAME}`
+          content: 'Tentang Kami'
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
           property: 'twitter:description',
-          content: `Tentang Kami - ${DESCRIPTION}`
+          content: `Tentang Kami ${APP_NAME}`
         },
         {
           hid: 'twitter:url',
